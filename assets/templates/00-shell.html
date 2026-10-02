@@ -1,0 +1,257 @@
+<!doctype html>
+<!-- ============================================================================
+     00-shell.html — Google Doodles 页面外壳（骨架）
+     ----------------------------------------------------------------------------
+     这是所有路由页共用的骨架：<head> + <header> + <main> + <footer> + 脚本。
+     用法：复制本文件，把 <main id="content"> 里的内容替换成 10/20/30 号模板中的
+           对应区块。
+     类名与 Google Glue 官方 CSS 完全一致 —— 换成原站 index.min.css 即为像素级还原。
+     细节说明见 SKILL.md 与 references/components.md。
+     ============================================================================ -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- 1. SEO / 社交卡片：原站每页都有这一整组，字段名一字不改 -->
+  <title>Google Doodles - Google's Search Logo Changes for Every Occasion</title>
+  <meta name="description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  <meta itemprop="image" content="/static/og-image.png">
+  <meta property="og:title" content="Google Doodles - Google's Search Logo Changes for Every Occasion">
+  <meta property="og:url" content="/">
+  <meta property="twitter:url" content="/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@GoogleDoodles">
+  <meta property="twitter:title" content="Google Doodles - Google's Search Logo Changes for Every Occasion">
+  <meta property="og:image" content="/static/og-image.png">
+  <meta property="twitter:image" content="/static/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  <meta property="twitter:description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  <link rel="canonical" href="/">
+
+  <!-- 2. 样式：先字体，再主样式表。顺序不能反 -->
+  <link rel="preload" href="/fonts/fonts.css" as="style">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/static/doodles-style.css">
+
+  <meta name="viewport" content="width=device-width">
+
+  <!-- 3. 图标 -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/brand/branding/googleg_gradient/2x/googleg_gradient_standard_192dp.png">
+  <link rel="icon" sizes="32x32" href="/assets/brand/branding/googleg_gradient/1x/googleg_gradient_standard_32dp.png">
+  <link rel="icon" sizes="16x16" href="/assets/brand/branding/googleg_gradient/1x/googleg_gradient_standard_16dp.png">
+  <link rel="shortcut icon" href="/assets/brand/branding/googleg_gradient/1x/googleg_gradient_standard_64dp.png">
+
+  <!-- 4. 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Google Doodles",
+    "url": "/"
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- ========================================================== 页眉 ========== -->
+<header class="glue-header glue-header--single glue-header--no-cta" aria-expanded="false">
+  <a href="#content" class="glue-header__link glue-header__skip-content">Jump to content</a>
+
+  <!-- ---- 移动端条（<1024px 显示） ---- -->
+  <div class="glue-header__bar glue-header__bar--mobile">
+    <div class="glue-header__tier">
+      <div class="glue-header__container">
+
+        <div class="glue-header__lock-up">
+          <div class="glue-header__hamburger">
+            <button class="glue-header__drawer-toggle-btn"
+                    aria-label="Open the navigation drawer"
+                    aria-controls="glue-drawer-2465973" aria-expanded="false" aria-haspopup="true"
+                    data-g-event-trigger="click" data-g-event="module_header"
+                    data-g-module_name="header" data-g-template_id="header_hamburger">
+              <svg class="glue-icon glue-icon--24px" role="presentation" aria-hidden="true">
+                <use href="/static/glue-icons.svg#menu"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="mobile-header-wrapper">
+            <div class="glue-header__logo">
+              <a class="glue-header__logo-link" href="/" title="Google doodles">
+                <div class="glue-header__logo-container">
+                  <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                    <use href="/static/glue-icons.svg#google-color-logo"></use>
+                  </svg>
+                </div>
+                <span class="glue-header__logo--product">
+                  <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                    <use href="/static/icons.svg#doodle-logo"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glue-header__tier">
+          <div class="glue-header__container">
+            <div class="glue-header__supplemental">
+              <ul class="glue-header__list">
+                <li class="glue-header__item">
+                  <a class="glue-header__link" href="/search/" aria-label="Search">
+                    <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--24px">
+                      <use href="/static/glue-icons.svg#search"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- 桌面端条（≥1024px 显示） ---- -->
+  <div class="glue-header__bar glue-header__bar--desktop glue-header__drawer"
+       id="glue-drawer-2465973" style="position: static; top: -64px;">
+    <div class="glue-header__tier">
+
+      <!-- 左：品牌锁形组合 -->
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link" href="/" title="Google doodles">
+              <div class="glue-header__logo-container">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="/static/glue-icons.svg#google-color-logo"></use>
+                </svg>
+              </div>
+              <span class="glue-header__logo--product">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="/static/icons.svg#doodle-logo"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中：主导航 -->
+      <div class="glue-header__container glue-header__container--linkbar">
+        <nav class="glue-header__link-bar">
+          <ul class="glue-header__list">
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/search/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="Library" data-g-cta_url="/search/"
+                 data-g-template_id="header_item" data-g-template_position="1/3">Library</a>
+            </li>
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/about/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="About" data-g-cta_url="/about/"
+                 data-g-template_id="header_item" data-g-template_position="2/3">About</a>
+            </li>
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/rss/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="RSS" data-g-cta_url="/rss/"
+                 data-g-template_id="header_item" data-g-template_position="3/3">RSS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- 右：补充动作（搜索） -->
+      <div class="glue-header__container">
+        <div class="glue-header__supplemental">
+          <ul class="glue-header__list">
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/search/" aria-label="Search"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_url="/search/" data-g-template_id="header_search">
+                <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--18px">
+                  <use href="/static/glue-icons.svg#search"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="glue-header__drawer-backdrop" aria-label="close menu"></div>
+</header>
+
+
+<!-- ========================================================== 主体 ========== -->
+<main id="content">
+  <div class="main-page">
+    <!-- 替换点：把 10-home.html / 20-doodle-detail.html / 30-library.html 的主体贴到这里。
+         贴之前剥掉模板最外层的 <div class="main-page"> —— 这里已经有一层了。
+         嵌套两层不会有任何视觉差异（这个类在原站 CSS 里没有样式），
+         但会让遍历 .main-page 直接子元素的脚本全部落空。 -->
+  </div>
+</main>
+
+
+<!-- ========================================================== 页脚 ========== -->
+<footer class="glue-footer">
+  <h2 class="glue-visually-hidden">Footer Links</h2>
+
+  <nav class="glue-footer__site-links">
+    <div class="glue-footer__site-links-grid glue-footer__site-links-grid--1-col">
+      <div class="glue-footer__site-links-column">
+
+        <h3 class="glue-footer__site-links-header">
+          <span class="glue-footer__site-links-header-button" id="column-1-toggle">
+            <span class="glue-footer__site-links-header-text">Doodles</span>
+            <svg role="presentation" aria-hidden="true"
+                 class="glue-icon glue-icon--footer glue-expansion-panel__header-arrow">
+              <use href="/static/glue-icons.svg#expand-more"></use>
+            </svg>
+          </span>
+        </h3>
+
+        <div class="glue-footer__site-links-list" id="column-1-content">
+          <ul class="glue-no-bullet" role="list">
+            <li class="glue-footer__site-links-list-item">
+              <a class="glue-footer__link" href="/search/"
+                 data-g-event-trigger="click" data-g-event="module_footer"
+                 data-g-module_name="footer" data-g-cta_type="button"
+                 data-g-cta_text="Library" data-g-cta_url="/search/"
+                 data-g-template_id="footer_item" data-g-template_position="1/2">Library</a>
+            </li>
+            <li class="glue-footer__site-links-list-item">
+              <a class="glue-footer__link" href="/about/"
+                 data-g-event-trigger="click" data-g-event="module_footer"
+                 data-g-module_name="footer" data-g-cta_type="button"
+                 data-g-cta_text="About" data-g-cta_url="/about/"
+                 data-g-template_id="footer_item" data-g-template_position="2/2">About</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <section class="glue-footer__global">
+    <p class="glue-footer__copyright">Copyright © 2026 → ∞ ZVI and Google will always be together.</p>
+  </section>
+</footer>
+
+<script src="/static/index.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!-- ============================================================================
+     10-home.html — 首页主体（贴进 00-shell.html 的 .main-page 里）
+     ----------------------------------------------------------------------------
+     结构（自上而下）：
+       section-1   hero-tag-carousel   当日/精选涂鸦拼贴轮播（含主文案层）
+       section-3   full-bleed-map      全站涂鸦地图/瀑布区
+       section-6   cards-stack         背景纹理 + 引言卡堆
+     区块顺序与 class 名完全对齐原站；doodle-module 是每个区块的通用钩子类。
+
+     注意两个"反直觉"的地方（都是原站真实行为，别"优化"掉）：
+       1. 拼贴卡不是网格布局，是 9 张卡各自绝对定位（nth-of-type + 百分比），
+          同一套百分比在 600 / 1024 两个断点各有取值。见 doodles-style.css 第 11 节。
+       2. 主文案层 .hero-tag-carousel__main 盖在拼贴上，带 pointer-events:none，
+          只有里面的 CTA 链接恢复可点（否则会挡住卡片点击）。
+     ============================================================================ -->
+
+<div class="main-page">
+
+  <!-- ==================================== 1. Hero 拼贴轮播（一屏一话题） == -->
+  <div class="hero-tag-carousel doodle-module floating-buttons" id="section-1">
+    <div class="background-pattern-dots">
+      <div class="glue-carousel"
+           aria-label="Featured Doodles"
+           data-glue-carousel-cards-per-page="1"
+           data-glue-carousel-cyclical="true"
+           data-glue-carousel-cyclical-aditional-cards="0">
+
+        <div class="glue-carousel__viewport">
+
+          <div class="glue-carousel__list hero-tag-carousel__list">
+
+            <!-- ---------- 一屏（一话题）。卡的数量与顺序决定落位，别随意增删 ---------- -->
+            <div class="glue-carousel__item hero-tag-carousel__item"
+                 id="glue-carousel-1" data-home-slide-index="1" aria-label="Culture">
+
+              <div class="hero-tag-carousel__collage active">
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-cherry-blossom-season/"
+                   aria-label="Celebrating Cherry Blossom Season"
+                   data-g-event="module_hero_tag_carousel" data-g-module_name="hero_tag_carousel"
+                   data-g-cta_type="button" data-g-template_position="1/9">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/celebrating-cherry-blossom-season-copy-6753651837110757-2xa.gif"
+                       alt="Celebrating Cherry Blossom Season">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/nba-playoffs-2025-am/" aria-label="NBA Playoffs 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/nba-playoffs-2025-am-6753651837110780.2-2xa.gif"
+                       alt="NBA Playoffs 2025 - AM">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-house-music/" aria-label="Celebrating House Music">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/celebrating-house-music-6753651837110601.2-2xa.gif"
+                       alt="Celebrating House Music">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-the-appalachian-trail/"
+                   aria-label="Celebrating the Appalachian Trail">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/celebrating-the-appalachian-trail-6753651837110071.2-2xa.gif"
+                       alt="Celebrating the Appalachian Trail">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/earth-day-2025/" aria-label="Earth Day 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/earth-day-2025-6753651837110746.2-2xa.png"
+                       alt="Earth Day 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/fourth-of-july-2025/" aria-label="Fourth of July 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/fourth-of-july-2025-6753651837110704-2x.png"
+                       alt="Fourth of July 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/halloween-2024/" aria-label="Halloween 2024">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/halloween-2024.gif" alt="Halloween 2024">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/lunar-new-year-2025/" aria-label="Lunar New Year 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/lunar-new-year-2025.gif" alt="Lunar New Year 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-ukiyo-e/" aria-label="Celebrating Ukiyo-e">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="/img/celebrating-ukiyo-e.gif" alt="Celebrating Ukiyo-e">
+                </a>
+
+              </div>
+            </div>
+
+            <!-- ---------- 第二个话题：同样 9 张卡 ---------- -->
+            <div class="glue-carousel__item hero-tag-carousel__item"
+                 id="glue-carousel-2" data-home-slide-index="2" aria-label="Sports">
+              <div class="hero-tag-carousel__collage">
+                <!-- 9 张卡，结构同上 -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ---------- 主文案层：盖在拼贴上，居中 ---------- -->
+          <div class="hero-tag-carousel__main glue-text-center">
+            <p class="hero-tag-carousel__main-text">
+              Doodles are celebrations of <doodles-tags></doodles-tags>
+            </p>
+
+            <div class="hero-tag-carousel__main-cta">
+              <!-- 每个话题词一个 chip，theme-* 决定描边色；未激活时 tabindex="-1" -->
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-green">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="1" aria-label="Culture" tabindex="-1" href="/search/"
+                   data-g-event="module_hero_tag_carousel" data-g-module_name="hero_tag_carousel"
+                   data-g-cta_type="button" data-g-cta_text="Culture">Culture</a>
+              </span>
+
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-brown">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="2" aria-label="Places" tabindex="-1" href="/search/"
+                   data-g-cta_type="button" data-g-cta_text="Places">Places</a>
+              </span>
+
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-pink">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="3" aria-label="Nature" tabindex="-1" href="/search/"
+                   data-g-cta_type="button" data-g-cta_text="Nature">Nature</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ---------- 轮播导航：左右箭头 + 分页点 ---------- -->
+        <div class="tout-carousel-navigation">
+          <button aria-label="Previous slide" id="prev-mobile-btn"
+                  class="glue-button glue-button--high-emphasis glue-button--icon interactive"
+                  data-g-event="module_tout_carousel" data-g-cta_type="carousel_left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="glue-icon glue-icon--24px"
+                 role="presentation" aria-hidden="true">
+              <use href="/static/icons.svg#left-white-arrow-tout-carousel"></use>
+            </svg>
+          </button>
+
+          <div class="glue-carousel__navigation"
+               aria-label="Go to slide $glue_carousel_page_number$"
+               data-glue-carousel-navigation-label="Go to slide $glue_carousel_page_number$"></div>
+
+          <button aria-label="Next slide" id="next-mobile-btn"
+                  class="glue-button glue-button--high-emphasis glue-button--icon interactive"
+                  data-g-event="module_tout_carousel" data-g-cta_type="carousel_right">
+            <svg xmlns="http://www.w3.org/2000/svg" class="glue-icon glue-icon--24px"
+                 role="presentation" aria-hidden="true">
+              <use href="/static/icons.svg#right-white-arrow-tout-carousel"></use>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================================== 2. 全幅区块（地图 + 卡片瀑布） ==== -->
+  <div class="full-bleed-map doodle-module theme-gray" id="section-3">
+    <div class="background background-pattern-square">
+
+      <div class="full-bleed-map-header">
+        <div class="eyebrow">
+          <svg role="presentation" aria-hidden="true" class="glue-icon">
+            <use href="/static/icons.svg#stars"></use>
+          </svg>
+          <span>Discover more Doodles</span>
+        </div>
+        <!-- 标题必须包一层 .title，字号由 CSS 的 .title h2 控制 -->
+        <div class="title">
+          <h2>Find the Doodle that started it all</h2>
+        </div>
+      </div>
+
+      <!-- Google Charts 地理图：.map-container:after 撑 62.4%，图表绝对居中 -->
+      <div class="map-wrapper">
+        <div class="map-container">
+          <div class="mapChart" id="mapChart"></div>
+        </div>
+      </div>
+
+      <div class="glue-page">
+        <div class="cards-stack-grid">
+          <div class="doodle-card-wrapper">
+            <a href="/doodle/100th-anniversary-of-flight/" class="doodle-card-link">
+              <div class="doodle-card">
+                <div class="doodle-card-img">
+                  <img loading="lazy" src="/img/100th-anniversary-of-flight.jpg"
+                       alt="100th Anniversary of Flight">
+                </div>
+                <div class="doodle-card-content">
+                  <div class="doodle-card-content__date">Dec 17, 2003</div>
+                  <div class="doodle-card-content__event">100th Anniversary of Flight</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- 更多卡片 … -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ====================================== 3. 引言卡堆 cards-stack ====== -->
+  <!-- 卡堆的层叠逻辑：第 4 张在文档流里当底板，1/2/3/5 绝对定位叠在它左后方。
+       所以必须正好 5 个 .cards-stack-content-square，且内容卡放在第 4 个位置。 -->
+  <div class="doodle-module cards-stack toggle-quote" id="section-6">
+    <div class="background-pattern-square">
+      <div class="glue-page">
+
+        <object aria-label="Doodles" class="cards-stack-logo" type="image/svg+xml"
+                data="/static/logo-doodle-color.svg"></object>
+
+        <div class="cards-stack-content-wrapper">
+
+          <button aria-label="Change card" class="cards-stack-content-change">
+            <svg role="presentation" aria-hidden="true" class="glue-icon">
+              <use href="/static/icons.svg#refresh"></use>
+            </svg>
+          </button>
+
+          <div class="cards-stack-content-list">
+
+            <div class="cards-stack-content-square"></div>
+            <div class="cards-stack-content-square"></div>
+            <div class="cards-stack-content-square"></div>
+
+            <!-- 第 4 个 = 在流里的"正面"卡，放真正的内容 -->
+            <div class="cards-stack-content-square content-card">
+              <div class="cards-stack-content-square-item active glue-text-center">
+                <p class="cards-stack-content-square-eyebrow">Did you know?</p>
+                <p class="cards-stack-content-square-quote">
+                  <span>The very first Doodle launched as an “out of office” message of sorts
+                        when company founders Larry and Sergey went on vacation.</span>
+                </p>
+                <a class="cards-stack-content-square-cta" href="/about/" aria-label="Learn More">
+                  <span>Learn More</span>
+                  <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--arrow">
+                    <use href="/static/icons.svg#right-arrow"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="cards-stack-content-square"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

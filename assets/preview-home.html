@@ -1,0 +1,2776 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  
+  <title>Google Doodles - Google's Search Logo Changes for Every Occasion</title>
+  <meta name="description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  <meta itemprop="image" content="/static/og-image.png">
+  <meta property="og:title" content="Google Doodles - Google's Search Logo Changes for Every Occasion">
+  <meta property="og:url" content="/">
+  <meta property="twitter:url" content="/">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@GoogleDoodles">
+  <meta property="twitter:title" content="Google Doodles - Google's Search Logo Changes for Every Occasion">
+  <meta property="og:image" content="/static/og-image.png">
+  <meta property="twitter:image" content="/static/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  <meta property="twitter:description" content="Explore the Google search logo changes made throughout the years to celebrate culture, holidays, and much more.">
+  
+
+  
+  
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <style>
+/* ============================================================================
+   doodles-style.css — Google Doodles (doodles.google) 视觉语言复刻
+   ----------------------------------------------------------------------------
+   用途：在没有原站 CSS 的情况下，独立还原 doodles.google 的外观。
+        类名与 Google 官方 Glue 设计系统一致，因此：
+          · 直接用本文件                     → 零依赖，外观高度接近
+          · 换成 assets/vendor/glue.min.css  → 100% 像素级（本文件的类是它的子集）
+   数值来源：doodles.google 原站 index.min.css（548 KB / 4020 条规则），
+             逐条解析并保留其 @media 分档，非目测近似。
+             原文件已随 skill 提供：assets/vendor/glue.min.css
+   字体：Google Sans / Google Sans Display / Google Sans Text / Product Sans
+         的 200 个 woff2 子集已随 skill 提供，见 assets/fonts/。
+         本文件只声明字体栈，不内联 @font-face —— 页面里用一行 link 指向
+         fonts/fonts.css 即可（原站就是这么做的：字体在前、主样式在后，
+         顺序不能反）。
+         注：这里刻意不写完整的 link 标签，否则任何"检查外链是否内联"的脚本
+         都会把这段注释当成真实外链（踩过一次）。
+   说明：本文件是「视觉规格的重新实现」，全部数值均为解析所得，未做目测修正。
+   ============================================================================ */
+
+/* ---------------------------------------------------------------- 1. 令牌 */
+:root {
+  /* 1.1 Glue 中性灰阶（原站 :root 完整取值） */
+  --glue-grey-0:   #fff;
+  --glue-grey-25:  #f1f1f1;
+  --glue-grey-50:  #f8f9fa;
+  --glue-grey-100: #f1f3f4;
+  --glue-grey-200: #e8eaed;
+  --glue-grey-300: #dadce0;
+  --glue-grey-400: #bdc1c6;
+  --glue-grey-500: #9aa0a6;
+  --glue-grey-600: #80868b;
+  --glue-grey-700: #5f6368;
+  --glue-grey-800: #3c4043;
+  --glue-grey-900: #202124;
+
+  /* 1.2 Glue 主题色阶 */
+  --glue-blue-50:   #e8f0fe;  --glue-blue-100: #d2e3fc;
+  --glue-blue-200:  #aecbfa;  --glue-blue-300: #8ab4f8;
+  --glue-blue-400:  #669df6;  --glue-blue-500: #4285f4;
+  --glue-blue-600:  #1a73e8;  --glue-blue-700: #1967d2;
+  --glue-blue-800:  #185abc;  --glue-blue-900: #174ea6;
+
+  --glue-green-50:  #e6f4ea;  --glue-green-100: #ceead6;
+  --glue-green-200: #a8dab5;  --glue-green-300: #81c995;
+  --glue-green-400: #5bb974;  --glue-green-500: #34a853;
+  --glue-green-600: #1e8e3e;  --glue-green-700: #188038;
+  --glue-green-800: #137333;  --glue-green-900: #0d652d;
+
+  --glue-red-50:    #fce8e6;  --glue-red-100: #fad2cf;
+  --glue-red-200:   #f6aea9;  --glue-red-300: #f28b82;
+  --glue-red-400:   #ee675c;  --glue-red-500: #ea4335;
+  --glue-red-600:   #d93025;  --glue-red-700: #c5221f;
+  --glue-red-800:   #b31412;  --glue-red-900: #a50e0e;
+
+  --glue-yellow-50: #fef7e0;  --glue-yellow-100: #feefc3;
+  --glue-yellow-200:#fde293;  --glue-yellow-300: #fdd663;
+  --glue-yellow-400:#fcc934;  --glue-yellow-500: #fbbc04;
+  --glue-yellow-600:#f9ab00;  --glue-yellow-700: #f29900;
+  --glue-yellow-800:#ea8600;  --glue-yellow-900: #e37400;
+
+  --glue-purple-100: #ea80fc;
+  --glue-purple-900: #681da8;
+
+  /* 1.3 语义色 */
+  --color-text:  #202124;
+  --color-muted: #5f6368;
+  --color-line:  #000;          /* 原站描边就是纯黑，不是灰 */
+  --color-link:  #1a73e8;
+  --color-focus: #1967d2;
+  --color-focus-alt: #185abc;
+  --color-bg:    #fff;
+
+  /* 1.4 字体族（原站字体栈） */
+  --font-display: "Google Sans Display", "Google Sans", Arial, Helvetica, sans-serif;
+  --font-title:   "Google Sans", Arial, Helvetica, sans-serif;
+  --font-body:    "Google Sans Text", Roboto, Arial, Helvetica, sans-serif;
+  --font-brand:   "Product Sans", "Google Sans", Arial, Helvetica, sans-serif;
+
+  /* 1.5 布局栅格 */
+  --page-max: 1296px;
+  --gutter-sm: 28px;
+  --gutter-md: 40px;
+  --gutter-lg: 72px;
+
+  /* 1.6 形状 */
+  --radius-card: 16px;
+  --radius-pill: 1000px;
+  --shadow-card-hover: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+  --shadow-header:     0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+
+  /* 1.7 结构 */
+  --header-h: 64px;
+}
+
+/* ------------------------------------------------------------- 2. 基础重置 */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 1em;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .1px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img { border: 0; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+.glue-no-bullet { list-style: none; margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 400; }
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+/* --------------------------------------------------------- 3. 排版工具类 */
+.glue-headline {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--color-text);
+  margin-bottom: 32px;
+  width: 70%;            /* 原站刻意的排版留白，别改成 100% */
+}
+
+.glue-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .1px;
+  line-height: 1.5;
+}
+.glue-body--large {
+  font-size: 1.125rem;
+  letter-spacing: normal;
+  line-height: 1.5555555556;
+}
+.glue-caption {
+  font-family: var(--font-body);
+  font-size: .875rem;
+  font-weight: 400;
+  letter-spacing: .15px;
+  line-height: 1.7142857143;
+}
+.glue-label {
+  font-family: var(--font-body);
+  font-size: .6875rem;
+  font-weight: 500;
+  letter-spacing: .5px;
+  line-height: 1.4545454545;
+  text-transform: uppercase;
+}
+
+.glue-text-center { text-align: center; }
+.glue-text-left   { text-align: left; }
+.glue-text-right  { text-align: right; }
+.glue-text-end    { text-align: end; }
+
+.glue-visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}
+
+/* ------------------------------------------------------------ 4. 页面栅格 */
+.glue-page { margin: 0 var(--gutter-sm); }
+
+@media (min-width: 600px) {
+  .glue-page { margin: 0 var(--gutter-md); }
+}
+@media (min-width: 1024px) {
+  .glue-page { margin: 0 var(--gutter-lg); }
+}
+@media (min-width: 1440px) {
+  .glue-page { margin: 0 auto; max-width: var(--page-max); }
+}
+
+.glue-page.no-margin { margin: 0 auto; }
+
+/* 内容两侧的留白柱：flex-basis 用 calc(50% - 648px)，648 = 1296/2。
+   视口越宽柱子越宽，中间内容恒为 1296px —— 不要用 100vw + 负 margin 硬凑。
+   注意柱子默认是 display:none，只有 ≥1440px 才出现：1024–1439 之间视口还不够宽，
+   留白由 .glue-page 的 72px 外边距负责。漏掉下面这条 1440 规则，整条 hero 就没有底色。 */
+.background-padding {
+  display: none;
+  flex: 1 1 calc(50% - 648px);
+}
+@media (min-width: 1440px) {
+  .background-padding { display: block; }
+}
+
+/* 通用 .display-flex 永远是横排。原站这个类只出现在 hero-doodle / hero-with-subtitle /
+   content-block 三处，前两者恒为 row，只有 content-block 会随断点 column → row。
+   最初写成"全局 column、600px 起 row"会让 hero 的三柱子在小屏竖着堆起来。 */
+.display-flex { display: flex; }
+.content-block .display-flex { flex-direction: column; }
+@media (min-width: 600px) {
+  .content-block .display-flex { flex-direction: row; }
+}
+
+.border-bottom { border-bottom: 1px solid var(--color-line); }
+
+.doodle-module { position: relative; }
+
+/* -------------------------------------------------------------- 5. 页眉 */
+.glue-header {
+  background-color: #fff;
+  font-family: sans-serif;
+  min-height: var(--header-h);
+  width: 100%;
+  position: relative;
+  z-index: 900;
+}
+
+.glue-header__link { color: var(--color-text); text-decoration: none; }
+
+.glue-header__skip-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 12px 20px;
+  background: #fff;
+  z-index: 1000;
+}
+.glue-header__skip-content:focus { left: 0; }
+
+.glue-header__bar {
+  background: #fff;
+  width: 100%;
+  height: var(--header-h);
+  min-height: var(--header-h);
+  box-shadow: 0 0 0 0 transparent;
+  transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.glue-header__bar--pinned {
+  box-shadow: var(--shadow-header);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+}
+.glue-header__bar--tiered { height: 128px; min-height: 128px; }
+
+.glue-header__tier {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.glue-header__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  min-height: var(--header-h);
+  width: 100%;
+}
+.glue-header__container--linkbar { flex: 1 1 auto; justify-content: flex-start; }
+
+.glue-header__lock-up { display: flex; align-items: center; }
+
+.glue-header__logo { display: flex; align-items: center; }
+.glue-header__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.glue-header__logo-container { display: flex; align-items: center; }
+.glue-header__logo-svg { display: block; width: 74px; height: 24px; }
+.glue-header__logo--product .glue-header__logo-svg { width: 106px; height: 24px; }
+
+.glue-header__link-bar {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+.glue-header__list { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
+.glue-header__item { display: flex; align-items: center; }
+
+.glue-header__link {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .25px;
+  color: var(--color-text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease;
+}
+.glue-header__link:hover { background: var(--glue-grey-100); }
+.glue-header__link[aria-current="page"] { color: var(--color-link); }
+
+.glue-header__supplemental { margin-left: auto; display: flex; align-items: center; }
+.glue-header__supplemental .glue-header__list { gap: 4px; }
+
+.glue-header__hamburger { display: flex; align-items: center; }
+.glue-header__drawer-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: background .15s ease;
+}
+.glue-header__drawer-toggle-btn:hover { background: var(--glue-grey-100); }
+
+/* 两条 bar 互斥显示 —— 不是一条 bar 做响应式变形 */
+.glue-header__bar--mobile  { display: block; box-shadow: var(--shadow-header); }
+.glue-header__bar--desktop { display: none; }
+.glue-header__container--linkbar { display: none; }
+
+@media (min-width: 1024px) {
+  .glue-header__bar--mobile  { display: none; }
+  .glue-header__bar--desktop { display: block; }
+  .glue-header__container--linkbar { display: flex; }
+}
+
+.glue-header__drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 800;
+}
+.glue-header__drawer-backdrop.is-open { display: block; }
+
+/* -------------------------------------------------------------- 6. 页脚 */
+.glue-footer {
+  background: #f8f9fa;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+/* 页脚各段的左右内边距与 glue-page 同档，注意 max-width 在 1440 才生效 */
+.glue-footer__global,
+.glue-footer__site-links,
+.glue-footer__upper { margin: 0 var(--gutter-sm); }
+
+@media (min-width: 600px) {
+  .glue-footer__global,
+  .glue-footer__site-links,
+  .glue-footer__upper { margin: 0 var(--gutter-md); }
+}
+@media (min-width: 1024px) {
+  .glue-footer__global,
+  .glue-footer__site-links,
+  .glue-footer__upper { margin: 0 var(--gutter-lg); }
+}
+@media (min-width: 1440px) {
+  .glue-footer__global,
+  .glue-footer__site-links,
+  .glue-footer__upper { margin: 0 auto; max-width: var(--page-max); }
+}
+
+.glue-footer__site-links { padding: 48px 0 8px; }
+.glue-footer__site-links-grid { display: grid; gap: 32px; }
+.glue-footer__site-links-grid--1-col { grid-template-columns: 1fr; }
+@media (min-width: 600px) {
+  .glue-footer__site-links-grid--2-col { grid-template-columns: repeat(2, 1fr); }
+  .glue-footer__site-links-grid--3-col { grid-template-columns: repeat(3, 1fr); }
+}
+.glue-footer__site-links-column { min-width: 0; }
+
+.glue-footer__site-links-header {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.glue-footer__site-links-header-button { display: flex; align-items: center; gap: 4px; }
+.glue-footer__site-links-header-text { display: inline-block; }
+.glue-footer__site-links-list-item { margin: 0; }
+
+.glue-footer__link {
+  display: inline-block;
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 0;
+  background-color: #f8f9fa;
+  color: var(--color-muted);
+  font-family: var(--font-title), Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  .glue-footer__link { min-height: 0; min-width: 0; padding: 0; }
+}
+.glue-footer__link:hover { text-decoration: underline; }
+
+.glue-footer__global {
+  border-top: 1px solid var(--glue-grey-300);
+  padding: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.glue-footer__copyright {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 0 0 16px;
+  font-family: var(--font-title), Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------- 7. 按钮：.cta */
+/* Doodles 自己的按钮体系（不是 Glue 的），黑描边药丸 */
+.cta {
+  align-items: center;
+  border-radius: 99px;
+  display: flex;
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  gap: 13px;
+  justify-content: center;
+  line-height: 100%;
+  padding: 14px 24px;
+  text-decoration: none;
+  width: fit-content;
+}
+@media (min-width: 1024px) {
+  .cta { font-size: 18px; padding: 22px 32px; }
+}
+.cta svg { height: 12px; width: 15px; }
+@media (min-width: 1024px) {
+  .cta svg { height: 20px; width: 20px; }
+}
+.cta--1 { background-color: #fff; border: 1px solid #000; color: #000; }
+.cta--2 { color: #fff; }
+.cta--2 svg { height: 15px; width: 15px; }
+.cta--3 { background-color: #005ac1; color: #fff; }
+.cta--4 { background-color: #000; border: none; color: #fff; }
+.cta--4 svg { fill: #fff; }
+.cta:hover { box-shadow: var(--shadow-card-hover); }
+
+/* ------------------------------------------------ 8. 按钮：.glue-button */
+.glue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 24px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .25px;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.glue-button--icon       { padding-left: 16px; padding-right: 12px; }
+.glue-button--icon-right { padding-left: 12px; padding-right: 16px; }
+
+.glue-button--high-emphasis { background-color: #1a73e8; color: #fff; }
+.glue-button--high-emphasis:hover { background-color: #1967d2; }
+.glue-button--high-emphasis:focus-visible { outline: 2px solid #185abc; outline-offset: 2px; }
+
+.glue-button--medium-emphasis {
+  background-color: #fff;
+  border-color: var(--glue-grey-300);
+  color: #1a73e8;
+  box-shadow: none;
+}
+.glue-button--medium-emphasis:hover { background-color: var(--glue-blue-50); }
+
+.glue-button--tonal { background-color: var(--glue-blue-50); color: var(--glue-blue-700); }
+.glue-button--tonal:hover { background-color: var(--glue-blue-100); }
+
+.glue-button--reversed { background-color: transparent; border: 1px solid #fff; color: #fff; }
+.glue-button--reversed:hover { background-color: rgba(255,255,255,.12); }
+
+.glue-button--low-emphasis {
+  background: transparent; color: #1a73e8; padding-left: 8px; padding-right: 8px;
+}
+.glue-button--low-emphasis:hover { background-color: var(--glue-blue-50); }
+
+/* ------------------------------------------------------------- 9. 图标 */
+/* 全部走 SVG sprite：<use href="/static/<hash>.icons.svg#<name>"> */
+.glue-icon {
+  display: inline-block;
+  width: 24px; height: 24px;
+  fill: currentColor;
+  vertical-align: middle;
+  flex: none;
+}
+.glue-icon--18px { width: 18px; height: 18px; }
+.glue-icon--20px { width: 20px; height: 20px; }
+.glue-icon--24px { width: 24px; height: 24px; }
+.glue-icon--32px { width: 32px; height: 32px; }
+.glue-icon--footer { width: 20px; height: 20px; }
+.glue-icon--arrow { transition: transform .15s ease; }
+
+/* ----------------------------------------------------- 10. 轮播 carousel */
+.glue-carousel { margin: 0 auto; width: 100%; }
+@media (min-width: 600px) { .glue-carousel { position: relative; } }
+
+.glue-carousel__viewport {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.glue-carousel__list {
+  align-content: center;
+  cursor: grab;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  touch-action: pan-y;
+  transition: transform .4s ease;
+  width: 100%;
+}
+
+/* 非卡片轮播：一屏一个 item */
+.glue-carousel__item:not(.glue-card) {
+  border-radius: 2px;
+  list-style: none;
+  min-width: 100%;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  transform: translateZ(0);
+}
+.glue-carousel__item:not(.glue-card):focus:after {
+  box-shadow: inset 0 0 0 2px #1a73e8;
+  content: "";
+  display: block;
+  height: 100%; left: 0; top: 0; width: 100%;
+  position: absolute;
+}
+
+/* 卡片轮播：grid 分栏 */
+.glue-carousel--cards .glue-carousel__list {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 600px) {
+  .glue-carousel--cards .glue-carousel__list { grid-gap: 24px; grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .glue-carousel--cards .glue-carousel__list { grid-gap: 24px; grid-template-columns: repeat(3, 1fr); }
+}
+
+.glue-carousel__button {
+  align-content: center;
+  background-color: #fff;
+  border: 0;
+  border-radius: 34px;
+  color: #000;
+  display: none;
+  flex-flow: row wrap;
+  height: 64px;
+  justify-content: center;
+  margin: 0;
+  max-height: 64px;
+  min-width: 64px;
+  opacity: .75;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: calc(50% - 32px);
+  transition: opacity .25s;
+  width: 64px;
+  z-index: 1;
+}
+@media (min-width: 600px) { .glue-carousel__button { display: flex; } }
+
+.glue-carousel__button:focus,
+.glue-carousel__button:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  opacity: 1;
+}
+
+.glue-carousel__button--prev { left: 10px; }
+.glue-carousel__button--next { right: 10px; }
+
+.glue-carousel__navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.glue-carousel__navigation-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.2);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.glue-carousel__navigation-dot[aria-current="true"] { background: #000; }
+
+/* peek-out：让轮播溢出 glue-page 的内边距 */
+.glue-page .glue-carousel--peek-out {
+  margin-left: calc(-1 * var(--gutter-sm));
+  margin-right: calc(-1 * var(--gutter-sm));
+  width: calc(100% + 2 * var(--gutter-sm));
+}
+@media (min-width: 600px) {
+  .glue-page .glue-carousel--peek-out { margin-left: auto; margin-right: auto; width: 100%; }
+}
+@media (min-width: 1024px) {
+  .glue-page .glue-carousel--peek-out { margin-left: auto; margin-right: auto; width: 100%; }
+}
+
+/* --------------------------------------- 11. 首页 hero 拼贴轮播（重头戏） */
+/* 拼贴不是网格：每张卡按 nth-of-type 绝对定位，尺寸全是百分比，
+   同一套百分比在三个断点各有取值。以下数值逐条提取自原站 CSS。 */
+
+.hero-tag-carousel { background-color: #fcfcfc; overflow: hidden; }
+
+.hero-tag-carousel .glue-carousel { height: 150vw; position: relative; }
+@media (min-width: 600px) {
+  .hero-tag-carousel .glue-carousel { height: 620px; }
+}
+@media (min-width: 1024px) {
+  .hero-tag-carousel .glue-carousel { height: 815px; max-width: 1440px; }
+}
+
+.hero-tag-carousel .glue-carousel__viewport {
+  height: inherit;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .hero-tag-carousel .glue-carousel__viewport { overflow: visible; }
+}
+
+.hero-tag-carousel .glue-carousel__item { height: 50vw; transform: none; width: 100%; }
+.hero-tag-carousel .glue-carousel__item,
+.hero-tag-carousel .glue-carousel__list { position: static; }
+.hero-tag-carousel__list.glue-carousel__list { height: inherit; transform: none !important; }
+
+.hero-tag-carousel__collage {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%; left: 0; top: 0; width: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.hero-tag-carousel__collage:not(.active) { display: none; visibility: hidden; }
+
+.hero-tag-carousel__collage-card {
+  background-color: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 11px;
+  display: block;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  overflow: hidden;
+  position: absolute;
+  transition: transform .3s ease-in-out;
+  width: 250px;
+}
+@media (min-width: 1024px) {
+  .hero-tag-carousel__collage-card { border-radius: 32px; }
+}
+/* 用 :before 撑 40% 高宽比，图片再长也不撑变形 */
+.hero-tag-carousel__collage-card:before { content: ""; display: block; padding-top: 40%; }
+.hero-tag-carousel__collage-card:hover { transform: scale(1.05); }
+.hero-tag-carousel__collage-card:focus { box-shadow: 0 0 0 2px var(--color-focus); }
+.hero-tag-carousel__collage-card:focus,
+.hero-tag-carousel__collage-card:hover,
+.hero-tag-carousel__collage-card:visited { background-color: #fff; }
+.hero-tag-carousel__collage-card,
+.hero-tag-carousel__collage-card * { cursor: pointer; }
+
+/* 每张卡的落位：基准 → ≥600px → ≥1024px */
+.hero-tag-carousel__collage-card:first-of-type            { left: 1%;     top: 5%;      width: 30%; }
+.hero-tag-carousel__collage-card:nth-of-type(2)           { left: 46%;    top: 2.7%;    width: 30%; }
+.hero-tag-carousel__collage-card:nth-of-type(3)           { left: 11.5%;  top: 18%;     width: 38%; }
+.hero-tag-carousel__collage-card:nth-of-type(4)           { right: -1.5%; top: 15.5%;   width: 34%; }
+.hero-tag-carousel__collage-card:nth-of-type(5)           { left: -14%;   top: 68%;     width: 35%; }
+.hero-tag-carousel__collage-card:nth-of-type(6)           { right: -22%;  top: 66%;     width: 39%; }
+.hero-tag-carousel__collage-card:nth-of-type(7)           { bottom: 5%;   left: -5%;    width: 35%; }
+.hero-tag-carousel__collage-card:nth-of-type(8)           { bottom: 18%;  left: 31%;    width: 37%; }
+.hero-tag-carousel__collage-card:nth-of-type(9)           { bottom: 9%;   right: -7%;   width: 34%; }
+
+@media (min-width: 600px) {
+  .hero-tag-carousel__collage-card:first-of-type  { left: -1.5%;  top: 24%;     width: 21.7%; }
+  .hero-tag-carousel__collage-card:nth-of-type(2) { left: 15%;    top: 1.7%;    width: 29%; }
+  .hero-tag-carousel__collage-card:nth-of-type(3) { left: 53.5%;  top: -2.7%;   width: 27.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(4) { right: -2.5%; top: 20%;     width: 25.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(5) { left: -5%;    top: 62%;     width: 25.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(6) { right: -12%;  top: 56%;     width: 30%; }
+  .hero-tag-carousel__collage-card:nth-of-type(7) { bottom: -2%;  left: 3.8%;   width: 27.5%; }
+  .hero-tag-carousel__collage-card:nth-of-type(8) { bottom: 5%;   left: 40%;    width: 26%; }
+  .hero-tag-carousel__collage-card:nth-of-type(9) { bottom: -1%;  right: 4%;    width: 25%; }
+}
+
+@media (min-width: 1024px) {
+  .hero-tag-carousel__collage-card:first-of-type  { left: -11.5%; top: 20%;    width: 21.7%; }
+  .hero-tag-carousel__collage-card:nth-of-type(2) { left: 15%;    top: 2.7%;   width: 29%; }
+  .hero-tag-carousel__collage-card:nth-of-type(3) { left: 53.5%;  top: -2.7%;  width: 27.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(4) { right: -12.5%;top: 14.5%;  width: 25.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(5) { left: -11%;   top: 50%;    width: 25.25%; }
+  .hero-tag-carousel__collage-card:nth-of-type(6) { right: -15%;  top: 46%;    width: 30%; }
+  .hero-tag-carousel__collage-card:nth-of-type(7) { bottom: -2%;  left: 3.8%;  width: 27.5%; }
+  .hero-tag-carousel__collage-card:nth-of-type(8) { bottom: 5%;   left: 40%;   width: 26%; }
+  .hero-tag-carousel__collage-card:nth-of-type(9) { bottom: -1%;  right: 4%;   width: 25%; }
+}
+
+.hero-tag-carousel__collage-card-bg {
+  height: 100%; left: 0; top: 0; width: 100%;
+  position: absolute;
+}
+.hero-tag-carousel__collage-card-img {
+  border-radius: 4px;
+  height: auto;
+  left: 50%; top: 50%;
+  margin: 0;
+  max-height: 90%; max-width: 90%;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+@media (min-width: 1024px) {
+  .hero-tag-carousel__collage-card-img { border-radius: 12px; max-height: 80%; max-width: 80%; }
+}
+
+/* 压在拼贴之上的主文案（pointer-events:none，不挡卡片点击） */
+.hero-tag-carousel__main {
+  display: flex;
+  flex-direction: column;
+  height: 100%; left: 0; top: 0; width: 100%;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+}
+.hero-tag-carousel__main * {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 120%;
+}
+@media (min-width: 600px) { .hero-tag-carousel__main * { font-size: 48px; } }
+@media (min-width: 1024px) { .hero-tag-carousel__main * { font-size: 56px; } }
+
+.hero-tag-carousel__main-text { margin: 0 40px; width: auto; }
+@media (min-width: 600px) {
+  .hero-tag-carousel__main-text { margin: 0 auto; width: 50%; }
+}
+
+.hero-tag-carousel__main-cta {
+  display: inline-flex;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  margin: -8.5px 40px;
+  overflow: hidden;
+  padding: 8.5px 0;
+  width: auto;
+}
+@media (min-width: 600px) {
+  .hero-tag-carousel__main-cta { margin: -14.5px auto; padding: 14.5px 0; width: 50%; }
+}
+.hero-tag-carousel__main-cta-wrapper {
+  border: none;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+/* 所有话题 chip 叠在同一个网格单元里，同一时刻只显示当前 slide 的那个。
+   原站靠 animation 把它们移出可视区；这里给一个无 JS 也成立的降级：
+   只有 .active 可见。接上原站 JS 后 animation 会自动接管。 */
+.hero-tag-carousel__main-cta-wrapper:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+.hero-tag-carousel__main-cta-link {
+  margin: 0 auto;
+  pointer-events: all;
+  transition: transform .5s ease-in-out;
+  width: fit-content;
+}
+.hero-tag-carousel__main-cta-link:focus,
+.hero-tag-carousel__main-cta-link:hover { transform: scale(1.05); }
+.hero-tag-carousel__main-cta-link:focus { box-shadow: 0 0 0 2px var(--color-focus); }
+
+/* hero 里的轮播按钮：白底黑描边，移动端在中间左右，桌面端贴两侧 */
+/* 导航容器本身没有样式，只是按钮的父节点；按钮靠 absolute 定位到轮播两侧 */
+.tout-carousel-navigation { display: flex; }
+.hero-tag-carousel .glue-carousel .glue-carousel__navigation { display: none; }
+
+/* 主文案里的主题词 chip：描边药丸，描边色由 .main-outline / .interactive-outline 提供 */
+.theme-word {
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-flex;
+  padding: .25% 2%;
+  white-space: nowrap;
+}
+@media (min-width: 600px) {
+  .theme-word { border-width: 2px; }
+}
+
+.hero-tag-carousel .glue-carousel__button {
+  background-color: #fff;
+  border: 1px solid var(--color-line);
+  display: inline-flex;
+  height: 48px;
+  max-height: none;
+  min-width: auto;
+  opacity: 1;
+  width: 48px;
+  z-index: 50;
+}
+@media (min-width: 600px) {
+  .hero-tag-carousel .glue-carousel__button { height: 64px; width: 64px; }
+}
+.hero-tag-carousel .glue-carousel__button--prev {
+  left: auto; right: calc(50% + 8px); transform: rotate(180deg);
+}
+@media (min-width: 600px) {
+  .hero-tag-carousel .glue-carousel__button--prev { left: 10px; right: auto; }
+}
+.hero-tag-carousel .glue-carousel__button--next { left: calc(50% + 8px); right: auto; }
+@media (min-width: 600px) {
+  .hero-tag-carousel .glue-carousel__button--next { left: auto; right: 10px; }
+}
+.hero-tag-carousel .glue-carousel__button svg { fill: #000; width: 16px; }
+@media (min-width: 600px) {
+  .hero-tag-carousel .glue-carousel__button svg { width: 24px; }
+}
+
+/* --------------------------------------- 12. 背景纹理（doodle-module 内） */
+.doodle-module [class*=background-pattern-] {
+  background-position: -2px -2px;
+  background-size: 60px 60px;
+}
+.doodle-module .background-pattern-square {
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.1) 2px, transparent 0),
+    linear-gradient(180deg, rgba(0,0,0,.1) 2px, transparent 0);
+}
+.doodle-module .background-pattern-dots {
+  background-image: radial-gradient(circle, rgba(0,0,0,.1) 3px, transparent 0);
+}
+.doodle-module .background-pattern-stripes {
+  background-image: repeating-linear-gradient(-45deg,
+    rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 52.5%, transparent 0, transparent);
+}
+
+/* ---------------------------------------------------------- 13. 涂鸦卡片 */
+.doodle-card-wrapper,
+.doodle-card-cta { border-radius: var(--radius-card); }
+
+.doodle-card-wrapper {
+  border: 1px solid var(--color-line);
+  height: 100%;
+  overflow: hidden;
+}
+
+.doodle-card-link { display: block; height: 100%; }
+
+.doodle-card-cta,
+.doodle-card {
+  background-color: #fff;
+  border: none;
+  display: block;
+  height: 100%;
+  transition: all .3s ease-in-out;
+}
+/* hover 是三件事同时发生：底色 + 双层阴影 + 放大 */
+.doodle-card-cta:focus,
+.doodle-card-cta:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+  transform: scale(1.01);
+}
+.doodle-card-cta:focus-visible { outline: 2px solid var(--color-focus-alt); }
+
+.doodle-card-img { position: relative; display: block; }
+/* 6:4 固定比例盒子 —— 图片再长也不会把卡片撑变形 */
+.doodle-card-img:before { content: ""; display: block; padding-top: 60%; }
+.doodle-card-img img {
+  height: auto;
+  left: 50%; top: 50%;
+  max-height: 90%; max-width: 90%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+@media (min-width: 1024px) {
+  .doodle-card-img img { max-height: 80%; max-width: 80%; }
+}
+
+/* 详情页推荐位的极简卡片把 .doodle-card-img 直接贴在 <img> 上，没有包装器。
+   这条规则让同名的两种用法都能得到 6:4 的视觉盒。 */
+img.doodle-card-img {
+  position: static;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  max-width: none; max-height: none;
+  padding: 10%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.doodle-card-content {
+  border-top: 1px solid var(--color-line);
+  font-family: var(--font-title);
+  padding: 28px 32px;
+}
+@media (min-width: 1024px) {
+  .doodle-card-content { padding: 32px 40px; }
+}
+.doodle-card-content__date {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  margin-bottom: 12px;
+}
+.doodle-card-content__event {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.doodle-card-title {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  padding: 24px 28px;
+}
+
+/* 检索页里的卡片：单列居中，限宽 410px */
+.search-doodle .doodle-card { justify-self: center; max-width: 410px; width: 100%; }
+
+/* -------------------------------------------------- 14. 卡片栅格 cards-stack */
+.cards-stack .glue-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
+  position: relative;
+}
+@media (min-width: 600px) {
+  .cards-stack .glue-page { margin: 0 auto; }
+}
+
+.cards-stack-logo {
+  display: flex;
+  flex-direction: row;
+  margin: 82px 0 0;
+  max-height: 75px;
+  max-width: 350px;
+  position: relative;
+}
+@media (min-width: 600px) {
+  .cards-stack-logo { margin: 82px 20px 0; max-height: 155px; max-width: 700px; }
+}
+@media (min-width: 1024px) {
+  .cards-stack-logo {
+    height: 100%; margin: auto; max-height: none; max-width: none;
+    position: absolute; width: 90%;
+  }
+}
+.cards-stack-logo svg { width: 100%; }
+
+.cards-stack-content-wrapper {
+  margin: 56px auto 80px;
+  max-width: 421px;
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .cards-stack-content-wrapper { margin: 150px auto; }
+}
+
+.cards-stack-content-list { display: flex; position: relative; }
+
+/* 卡堆：第 4 张在流里当"底板"，其余绝对定位叠在它左后方形成层次 */
+.cards-stack-content-square {
+  animation-delay: 50ms;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  background-color: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 26px;
+  display: grid;
+  font-family: var(--font-title);
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  padding: 60px 40px;
+  position: relative;
+  transition: background-color .35s ease-in;
+  z-index: 4;
+}
+@media (min-width: 600px) {
+  .cards-stack-content-square { padding: 48px 32px; }
+}
+
+.cards-stack-content-square:not(:nth-of-type(4)) {
+  height: calc(100% - 38px);
+  position: absolute;
+  right: 0; top: 0;
+  width: calc(100% - 52px);
+}
+.cards-stack-content-square:first-of-type   { transform: translate(0);           z-index: 1; }
+.cards-stack-content-square:nth-of-type(2)  { transform: translate(-14px, 12px); z-index: 2; }
+.cards-stack-content-square:nth-of-type(3)  { transform: translate(-32px, 25px); z-index: 3; }
+.cards-stack-content-square:nth-of-type(4)  { margin: 38px 52px 0 0;             z-index: 4; }
+.cards-stack-content-square:nth-of-type(5)  { transform: translate(-52px, 38px); z-index: 5; visibility: hidden; }
+
+.cards-stack-content-square-item {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.cards-stack-content-square-item:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.cards-stack-content-square-eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 32px;
+}
+@media (min-width: 600px) {
+  .cards-stack-content-square-eyebrow { font-size: 18px; line-height: 120%; margin-bottom: 46px; }
+}
+.cards-stack-content-square-quote {
+  flex: 1;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 140%;
+  margin-bottom: 23px;
+  margin-top: 0;
+  transition: height .5s ease-in;
+}
+@media (min-width: 600px) {
+  .cards-stack-content-square-quote { font-size: 32px; line-height: 140%; }
+}
+.cards-stack-content-square-cta {
+  align-items: center;
+  color: initial;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 120%;
+  padding: 14px 24px;
+  text-decoration: none;
+}
+@media (min-width: 600px) {
+  .cards-stack-content-square-cta { font-size: 18px; padding: 23px 32px; }
+}
+.cards-stack-content-square-cta svg { height: 24px; margin-left: 8px; width: 24px; }
+@media (min-width: 600px) {
+  .cards-stack-content-square-cta svg { height: 16px; margin-left: 15px; width: 20px; }
+}
+.cards-stack-content-square-cta:hover .glue-icon--arrow { transform: translateX(4px); }
+
+.cards-stack-content-change {
+  display: block;
+  margin: 0 0 16px auto;
+}
+.cards-stack.toggle-quote .cards-stack-content-square-quote { transition: height .5s ease-out; }
+
+/* 详情页底部的推荐卡片栅格 */
+.cards-stack-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+  .cards-stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .cards-stack-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.cards-stack-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+
+/* ------------------------------------------------ 15. 全幅区块 full-bleed-map */
+.full-bleed-map { display: block; }
+.full-bleed-map .glue-page { display: flex; flex-direction: column; }
+@media (max-width: 599px) {
+  .full-bleed-map .glue-page { margin: 0; }
+}
+
+.full-bleed-map .background.background-pattern-square { padding: 56px 0; }
+@media (min-width: 600px) {
+  .full-bleed-map .background.background-pattern-square { padding: 70px 0 21px; }
+}
+
+.full-bleed-map .full-bleed-map-header .eyebrow {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+@media (max-width: 599px) {
+  .full-bleed-map .full-bleed-map-header .eyebrow { display: none; }
+}
+.full-bleed-map .full-bleed-map-header .eyebrow svg { height: 32px; margin-right: 16px; width: 32px; }
+.full-bleed-map .full-bleed-map-header .eyebrow span {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+.full-bleed-map .full-bleed-map-header .title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 0 83px;
+}
+@media (min-width: 600px) {
+  .full-bleed-map .full-bleed-map-header .title { margin-bottom: 84px; padding: 0; }
+}
+.full-bleed-map .full-bleed-map-header .title h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .full-bleed-map .full-bleed-map-header .title h2 { font-size: 48px; }
+}
+
+.full-bleed-map .map-wrapper { margin-bottom: 32px; }
+@media (min-width: 1024px) { .full-bleed-map .map-wrapper { margin-bottom: 85px; } }
+
+.full-bleed-map .map-container {
+  margin: 0 auto;
+  max-width: 1100px;
+  order: 2;
+  position: relative;
+  width: 100%;
+}
+/* 62.4% 是 Google Charts 地理图的固定比例 */
+.full-bleed-map .map-container:after { content: ""; display: block; padding-top: 62.4%; }
+.full-bleed-map .map-container .mapChart {
+  height: calc(100% - 10px);
+  left: 50%; top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 10px);
+}
+.full-bleed-map .map-container .mapChart path { stroke-width: 0; }
+
+/* ---------------------------------------- 16. 详情页 hero（三柱子布局） */
+.hero-doodle { display: flex; flex-direction: column; }
+.hero-doodle .display-flex { display: flex; }
+.hero-doodle .display-flex.border-bottom { border-bottom: 1px solid var(--color-line); }
+.hero-doodle .glue-page { width: 100%; }
+
+/* 图片区：高度随断点台阶式增长（注意 480px 在 1440 才生效） */
+.hero-doodle .img-container {
+  align-items: center;
+  display: flex;
+  height: 221px;
+  justify-content: center;
+  padding: 0 24px;
+  position: relative;
+}
+@media (min-width: 600px) { .hero-doodle .img-container { height: 316px; } }
+@media (min-width: 1440px) { .hero-doodle .img-container { height: 480px; } }
+
+.hero-doodle .img-container .media-container {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 375px;
+  z-index: 1;
+}
+@media (min-width: 600px) { .hero-doodle .img-container .media-container { width: 732px; } }
+@media (min-width: 1440px) { .hero-doodle .img-container .media-container { width: 940px; } }
+.hero-doodle .img-container .media-container .doodle-image { width: 100%; object-fit: contain; }
+
+/* 标题条 */
+.hero-doodle .content-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  min-height: 195px;
+  padding: 24px;
+}
+@media (min-width: 600px) {
+  .hero-doodle .content-container { min-height: 253px; padding: 32px 93px; }
+}
+@media (min-width: 1440px) {
+  .hero-doodle .content-container { align-items: center; min-height: 306px; padding: 0 80px; }
+}
+.hero-doodle .content-container .date {
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 4px;
+  line-height: 19px;
+}
+.hero-doodle .content-container .date:before {
+  content: "•";
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 700;
+}
+@media (min-width: 1440px) {
+  .hero-doodle .content-container .date { font-size: 18px; line-height: 19px; }
+}
+.hero-doodle .content-container .title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+}
+@media (min-width: 600px) {
+  .hero-doodle .content-container .title { font-size: 64px; line-height: 77px; }
+}
+@media (min-width: 1440px) {
+  .hero-doodle .content-container .title { font-size: 80px; line-height: 96px; text-align: center; }
+}
+
+/* 正文引言 */
+.opener { padding: 64px 24px; }
+@media (min-width: 600px) { .opener { padding: 48px 80px; } }
+@media (min-width: 1024px) { .opener { padding: 100px 120px; } }
+
+.opener p {
+  border-color: inherit;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  word-wrap: normal;
+}
+@media (min-width: 600px) { .opener p { font-size: 32px; } }
+
+/* ---------------------------------------------------- 17. 关键主题 chips */
+.key-themes { padding: 40px 0; }
+@media (min-width: 600px) { .key-themes { padding-left: 60px; padding-right: 60px; } }
+@media (min-width: 1024px) { .key-themes { padding-left: 80px; padding-right: 80px; } }
+@media (min-width: 1440px) { .key-themes { padding: 68px 60px 45px; padding-left: 80px; padding-right: 80px; } }
+
+.key-themes .key-themes-title {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+@media (min-width: 600px) { .key-themes .key-themes-title { font-size: 24px; } }
+@media (min-width: 1440px) {
+  .key-themes .key-themes-title { font-size: 18px; margin-bottom: 32px; text-align: left; }
+}
+
+.key-themes .themes-cta-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 1440px) {
+  .key-themes .themes-cta-wrapper { flex-direction: row; }
+}
+
+.key-themes .themes-cta-wrapper .themes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding: 4px 12px;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .key-themes .themes-cta-wrapper .themes-wrapper { margin-bottom: 32px; padding: 6px 2px; }
+}
+@media (min-width: 1440px) {
+  .key-themes .themes-cta-wrapper .themes-wrapper { margin: 0 16px 0 0; text-align: left; width: auto; }
+}
+
+/* chip：2px 黑描边药丸，20px 字号（比一般 chip 大） */
+.key-themes .themes-cta-wrapper .themes-wrapper .theme {
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 2px;
+  color: #000;
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 400;
+  gap: 10px;
+  line-height: 140%;
+  margin: 4px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+@media (min-width: 1440px) {
+  .key-themes .themes-cta-wrapper .themes-wrapper .theme { font-size: 32px; padding: 8px 24px; }
+}
+
+.key-themes .themes-cta-wrapper .key-themes-cta-link { color: #000; text-decoration: none; }
+.key-themes .themes-cta-wrapper .key-themes-cta-link .key-themes-cta-wrapper {
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 9999px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 14px 24px;
+  width: 268px;
+}
+@media (min-width: 1440px) {
+  .key-themes .themes-cta-wrapper .key-themes-cta-link .key-themes-cta-wrapper {
+    padding: 23px 32px; width: auto;
+  }
+}
+.key-themes .themes-cta-wrapper .key-themes-cta-link .key-themes-cta {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+}
+@media (min-width: 1440px) {
+  .key-themes .themes-cta-wrapper .key-themes-cta-link .key-themes-cta { font-size: 18px; }
+}
+.key-themes .themes-cta-wrapper .key-themes-cta-link svg { fill: #000; }
+
+/* ------------------------------------------------ 18. 颜色体系 theme-* / surface-* */
+/* 这是整个风格里最该照抄的部分 —— Google 的配色不是「主色 + 灰底」两件事，
+   而是每一套主题色都自带一条从最浅到最深的 6 档色梯：
+
+     main ────────── 大面积铺底（hero 色带、图片区、区块背景）
+     interactive ─── 可点元素（按钮、chip、链接描边），比 main 深以保证对比度
+     surface-1 ───── 浅到几乎看不出颜色的底，用于大面积内容区
+     surface-2/3/4 ─ 逐级加深，做同一色相内的层次
+     surface-5 ───── 极深，用于深色文字块 / 深色页脚
+
+   19 套主题 = 19 条独立的色梯。用 theme-pink 时 surface-1 是淡粉 #f7edf2，
+   不是淡蓝 —— 换主题要连 surface 一起换，整页才是同一个色相。
+   （原站选择器带 .doodle-module 前缀；这里去掉前缀，用起来更宽松，
+     与原站 CSS 混用时因为多了一层 .doodle-module 反而不会互相覆盖。） */
+
+
+/* blue —— 主色铺底 #4285f4，交互色 #005ac1 */
+.theme-blue .main { background-color: #4285f4; }
+.theme-blue .main-outline { border-color: #4285f4; }
+.theme-blue .main-fill-svg { fill: #4285f4; }
+.theme-blue .interactive { background-color: #005ac1; }
+.theme-blue .interactive-outline { border-color: #005ac1; }
+.theme-blue .interactive-fill-svg { fill: #005ac1; }
+.theme-blue .surface-1 { background-color: #edf0ff; }
+.theme-blue .surface-1-outline { border-color: #edf0ff; }
+.theme-blue .surface-1-fill-svg { fill: #edf0ff; }
+.theme-blue .surface-2 { background-color: #d8e2ff; }
+.theme-blue .surface-2-outline { border-color: #d8e2ff; }
+.theme-blue .surface-2-fill-svg { fill: #d8e2ff; }
+.theme-blue .surface-3 { background-color: #adc6ff; }
+.theme-blue .surface-3-outline { border-color: #adc6ff; }
+.theme-blue .surface-3-fill-svg { fill: #adc6ff; }
+.theme-blue .surface-4 { background-color: #80aaff; }
+.theme-blue .surface-4-outline { border-color: #80aaff; }
+.theme-blue .surface-4-fill-svg { fill: #80aaff; }
+.theme-blue .surface-5 { background-color: #001a41; }
+.theme-blue .surface-5-outline { border-color: #001a41; }
+.theme-blue .surface-5-fill-svg { fill: #001a41; }
+
+/* brown —— 主色铺底 #b47943，交互色 #7c4c1f */
+.theme-brown .main { background-color: #b47943; }
+.theme-brown .main-outline { border-color: #b47943; }
+.theme-brown .main-fill-svg { fill: #b47943; }
+.theme-brown .interactive { background-color: #7c4c1f; }
+.theme-brown .interactive-outline { border-color: #7c4c1f; }
+.theme-brown .interactive-fill-svg { fill: #7c4c1f; }
+.theme-brown .surface-1 { background-color: #ebdec4; }
+.theme-brown .surface-1-outline { border-color: #ebdec4; }
+.theme-brown .surface-1-fill-svg { fill: #ebdec4; }
+.theme-brown .surface-2 { background-color: #e9c7ab; }
+.theme-brown .surface-2-outline { border-color: #e9c7ab; }
+.theme-brown .surface-2-fill-svg { fill: #e9c7ab; }
+.theme-brown .surface-3 { background-color: #cda889; }
+.theme-brown .surface-3-outline { border-color: #cda889; }
+.theme-brown .surface-3-fill-svg { fill: #cda889; }
+.theme-brown .surface-4 { background-color: #ae8864; }
+.theme-brown .surface-4-outline { border-color: #ae8864; }
+.theme-brown .surface-4-fill-svg { fill: #ae8864; }
+.theme-brown .surface-5 { background-color: #3d2210; }
+.theme-brown .surface-5-outline { border-color: #3d2210; }
+.theme-brown .surface-5-fill-svg { fill: #3d2210; }
+
+/* dark-blue —— 主色铺底 #2e42d1，交互色 #2e42d1 */
+.theme-dark-blue .main { background-color: #2e42d1; }
+.theme-dark-blue .main-outline { border-color: #2e42d1; }
+.theme-dark-blue .main-fill-svg { fill: #2e42d1; }
+.theme-dark-blue .interactive { background-color: #2e42d1; }
+.theme-dark-blue .interactive-outline { border-color: #2e42d1; }
+.theme-dark-blue .interactive-fill-svg { fill: #2e42d1; }
+.theme-dark-blue .surface-1 { background-color: #dae2ff; }
+.theme-dark-blue .surface-1-outline { border-color: #dae2ff; }
+.theme-dark-blue .surface-1-fill-svg { fill: #dae2ff; }
+.theme-dark-blue .surface-2 { background-color: #b9c8ff; }
+.theme-dark-blue .surface-2-outline { border-color: #b9c8ff; }
+.theme-dark-blue .surface-2-fill-svg { fill: #b9c8ff; }
+.theme-dark-blue .surface-3 { background-color: #919cff; }
+.theme-dark-blue .surface-3-outline { border-color: #919cff; }
+.theme-dark-blue .surface-3-fill-svg { fill: #919cff; }
+.theme-dark-blue .surface-4 { background-color: #6a70f4; }
+.theme-dark-blue .surface-4-outline { border-color: #6a70f4; }
+.theme-dark-blue .surface-4-fill-svg { fill: #6a70f4; }
+.theme-dark-blue .surface-5 { background-color: #050b45; }
+.theme-dark-blue .surface-5-outline { border-color: #050b45; }
+.theme-dark-blue .surface-5-fill-svg { fill: #050b45; }
+
+/* emerald —— 主色铺底 #278c68，交互色 #006d46 */
+.theme-emerald .main { background-color: #278c68; }
+.theme-emerald .main-outline { border-color: #278c68; }
+.theme-emerald .main-fill-svg { fill: #278c68; }
+.theme-emerald .interactive { background-color: #006d46; }
+.theme-emerald .interactive-outline { border-color: #006d46; }
+.theme-emerald .interactive-fill-svg { fill: #006d46; }
+.theme-emerald .surface-1 { background-color: #d9ffec; }
+.theme-emerald .surface-1-outline { border-color: #d9ffec; }
+.theme-emerald .surface-1-fill-svg { fill: #d9ffec; }
+.theme-emerald .surface-2 { background-color: #99ecce; }
+.theme-emerald .surface-2-outline { border-color: #99ecce; }
+.theme-emerald .surface-2-fill-svg { fill: #99ecce; }
+.theme-emerald .surface-3 { background-color: #5bd2a7; }
+.theme-emerald .surface-3-outline { border-color: #5bd2a7; }
+.theme-emerald .surface-3-fill-svg { fill: #5bd2a7; }
+.theme-emerald .surface-4 { background-color: #3aba8c; }
+.theme-emerald .surface-4-outline { border-color: #3aba8c; }
+.theme-emerald .surface-4-fill-svg { fill: #3aba8c; }
+.theme-emerald .surface-5 { background-color: #00250a; }
+.theme-emerald .surface-5-outline { border-color: #00250a; }
+.theme-emerald .surface-5-fill-svg { fill: #00250a; }
+
+/* grass —— 主色铺底 #70c114，交互色 #4b8e00 */
+.theme-grass .main { background-color: #70c114; }
+.theme-grass .main-outline { border-color: #70c114; }
+.theme-grass .main-fill-svg { fill: #70c114; }
+.theme-grass .interactive { background-color: #4b8e00; }
+.theme-grass .interactive-outline { border-color: #4b8e00; }
+.theme-grass .interactive-fill-svg { fill: #4b8e00; }
+.theme-grass .surface-1 { background-color: #e9fdc9; }
+.theme-grass .surface-1-outline { border-color: #e9fdc9; }
+.theme-grass .surface-1-fill-svg { fill: #e9fdc9; }
+.theme-grass .surface-2 { background-color: #d5f2a6; }
+.theme-grass .surface-2-outline { border-color: #d5f2a6; }
+.theme-grass .surface-2-fill-svg { fill: #d5f2a6; }
+.theme-grass .surface-3 { background-color: #bde482; }
+.theme-grass .surface-3-outline { border-color: #bde482; }
+.theme-grass .surface-3-fill-svg { fill: #bde482; }
+.theme-grass .surface-4 { background-color: #a9d64c; }
+.theme-grass .surface-4-outline { border-color: #a9d64c; }
+.theme-grass .surface-4-fill-svg { fill: #a9d64c; }
+.theme-grass .surface-5 { background-color: #143607; }
+.theme-grass .surface-5-outline { border-color: #143607; }
+.theme-grass .surface-5-fill-svg { fill: #143607; }
+
+/* gray —— 主色铺底 #c2c2c2，交互色 #000000 */
+.theme-gray .main { background-color: #c2c2c2; }
+.theme-gray .main-outline { border-color: #c2c2c2; }
+.theme-gray .main-fill-svg { fill: #c2c2c2; }
+.theme-gray .interactive { background-color: #000000; }
+.theme-gray .interactive-outline { border-color: #000000; }
+.theme-gray .interactive-fill-svg { fill: #000000; }
+/* .theme-gray .surface-1 —— 原站未定义，落到全局默认 */
+.theme-gray .surface-2 { background-color: #f5f5f5; }
+.theme-gray .surface-2-outline { border-color: #f5f5f5; }
+.theme-gray .surface-2-fill-svg { fill: #f5f5f5; }
+.theme-gray .surface-3 { background-color: #e6e6e6; }
+.theme-gray .surface-3-outline { border-color: #e6e6e6; }
+.theme-gray .surface-3-fill-svg { fill: #e6e6e6; }
+.theme-gray .surface-4 { background-color: #c2c2c2; }
+.theme-gray .surface-4-outline { border-color: #c2c2c2; }
+.theme-gray .surface-4-fill-svg { fill: #c2c2c2; }
+.theme-gray .surface-5 { background-color: #262626; }
+.theme-gray .surface-5-outline { border-color: #262626; }
+.theme-gray .surface-5-fill-svg { fill: #262626; }
+
+/* green —— 主色铺底 #29b571，交互色 #006e2c */
+.theme-green .main { background-color: #29b571; }
+.theme-green .main-outline { border-color: #29b571; }
+.theme-green .main-fill-svg { fill: #29b571; }
+.theme-green .interactive { background-color: #006e2c; }
+.theme-green .interactive-outline { border-color: #006e2c; }
+.theme-green .interactive-fill-svg { fill: #006e2c; }
+.theme-green .surface-1 { background-color: #d6fad7; }
+.theme-green .surface-1-outline { border-color: #d6fad7; }
+.theme-green .surface-1-fill-svg { fill: #d6fad7; }
+.theme-green .surface-2 { background-color: #aff8bb; }
+.theme-green .surface-2-outline { border-color: #aff8bb; }
+.theme-green .surface-2-fill-svg { fill: #aff8bb; }
+.theme-green .surface-3 { background-color: #85dd95; }
+.theme-green .surface-3-outline { border-color: #85dd95; }
+.theme-green .surface-3-fill-svg { fill: #85dd95; }
+.theme-green .surface-4 { background-color: #66c57a; }
+.theme-green .surface-4-outline { border-color: #66c57a; }
+.theme-green .surface-4-fill-svg { fill: #66c57a; }
+.theme-green .surface-5 { background-color: #002108; }
+.theme-green .surface-5-outline { border-color: #002108; }
+.theme-green .surface-5-fill-svg { fill: #002108; }
+
+/* light-blue —— 主色铺底 #76d1ff，交互色 #00739f */
+.theme-light-blue .main { background-color: #76d1ff; }
+.theme-light-blue .main-outline { border-color: #76d1ff; }
+.theme-light-blue .main-fill-svg { fill: #76d1ff; }
+.theme-light-blue .interactive { background-color: #00739f; }
+.theme-light-blue .interactive-outline { border-color: #00739f; }
+.theme-light-blue .interactive-fill-svg { fill: #00739f; }
+.theme-light-blue .surface-1 { background-color: #daf6ff; }
+.theme-light-blue .surface-1-outline { border-color: #daf6ff; }
+.theme-light-blue .surface-1-fill-svg { fill: #daf6ff; }
+.theme-light-blue .surface-2 { background-color: #bce9ff; }
+.theme-light-blue .surface-2-outline { border-color: #bce9ff; }
+.theme-light-blue .surface-2-fill-svg { fill: #bce9ff; }
+.theme-light-blue .surface-3 { background-color: #82d1ea; }
+.theme-light-blue .surface-3-outline { border-color: #82d1ea; }
+.theme-light-blue .surface-3-fill-svg { fill: #82d1ea; }
+.theme-light-blue .surface-4 { background-color: #70bbe4; }
+.theme-light-blue .surface-4-outline { border-color: #70bbe4; }
+.theme-light-blue .surface-4-fill-svg { fill: #70bbe4; }
+.theme-light-blue .surface-5 { background-color: #102646; }
+.theme-light-blue .surface-5-outline { border-color: #102646; }
+.theme-light-blue .surface-5-fill-svg { fill: #102646; }
+
+/* lime —— 主色铺底 #d9dd0b，交互色 #a79b00 */
+.theme-lime .main { background-color: #d9dd0b; }
+.theme-lime .main-outline { border-color: #d9dd0b; }
+.theme-lime .main-fill-svg { fill: #d9dd0b; }
+.theme-lime .interactive { background-color: #a79b00; }
+.theme-lime .interactive-outline { border-color: #a79b00; }
+.theme-lime .interactive-fill-svg { fill: #a79b00; }
+.theme-lime .surface-1 { background-color: #f6f6e3; }
+.theme-lime .surface-1-outline { border-color: #f6f6e3; }
+.theme-lime .surface-1-fill-svg { fill: #f6f6e3; }
+.theme-lime .surface-2 { background-color: #efefbe; }
+.theme-lime .surface-2-outline { border-color: #efefbe; }
+.theme-lime .surface-2-fill-svg { fill: #efefbe; }
+.theme-lime .surface-3 { background-color: #e7e896; }
+.theme-lime .surface-3-outline { border-color: #e7e896; }
+.theme-lime .surface-3-fill-svg { fill: #e7e896; }
+.theme-lime .surface-4 { background-color: #dee170; }
+.theme-lime .surface-4-outline { border-color: #dee170; }
+.theme-lime .surface-4-fill-svg { fill: #dee170; }
+.theme-lime .surface-5 { background-color: #3c3408; }
+.theme-lime .surface-5-outline { border-color: #3c3408; }
+.theme-lime .surface-5-fill-svg { fill: #3c3408; }
+
+/* magenta —— 主色铺底 #ed77ff，交互色 #ca3be2 */
+.theme-magenta .main { background-color: #ed77ff; }
+.theme-magenta .main-outline { border-color: #ed77ff; }
+.theme-magenta .main-fill-svg { fill: #ed77ff; }
+.theme-magenta .interactive { background-color: #ca3be2; }
+.theme-magenta .interactive-outline { border-color: #ca3be2; }
+.theme-magenta .interactive-fill-svg { fill: #ca3be2; }
+.theme-magenta .surface-1 { background-color: #ffebff; }
+.theme-magenta .surface-1-outline { border-color: #ffebff; }
+.theme-magenta .surface-1-fill-svg { fill: #ffebff; }
+.theme-magenta .surface-2 { background-color: #ffd2ff; }
+.theme-magenta .surface-2-outline { border-color: #ffd2ff; }
+.theme-magenta .surface-2-fill-svg { fill: #ffd2ff; }
+.theme-magenta .surface-3 { background-color: #f4adff; }
+.theme-magenta .surface-3-outline { border-color: #f4adff; }
+.theme-magenta .surface-3-fill-svg { fill: #f4adff; }
+.theme-magenta .surface-4 { background-color: #de87ed; }
+.theme-magenta .surface-4-outline { border-color: #de87ed; }
+.theme-magenta .surface-4-fill-svg { fill: #de87ed; }
+.theme-magenta .surface-5 { background-color: #2f0444; }
+.theme-magenta .surface-5-outline { border-color: #2f0444; }
+.theme-magenta .surface-5-fill-svg { fill: #2f0444; }
+
+/* orange —— 主色铺底 #ff701f，交互色 #ff701f */
+.theme-orange .main { background-color: #ff701f; }
+.theme-orange .main-outline { border-color: #ff701f; }
+.theme-orange .main-fill-svg { fill: #ff701f; }
+.theme-orange .interactive { background-color: #ff701f; }
+.theme-orange .interactive-outline { border-color: #ff701f; }
+.theme-orange .interactive-fill-svg { fill: #ff701f; }
+.theme-orange .surface-1 { background-color: #f7e1cb; }
+.theme-orange .surface-1-outline { border-color: #f7e1cb; }
+.theme-orange .surface-1-fill-svg { fill: #f7e1cb; }
+.theme-orange .surface-2 { background-color: #facc9b; }
+.theme-orange .surface-2-outline { border-color: #facc9b; }
+.theme-orange .surface-2-fill-svg { fill: #facc9b; }
+.theme-orange .surface-3 { background-color: #ffca93; }
+.theme-orange .surface-3-outline { border-color: #ffca93; }
+.theme-orange .surface-3-fill-svg { fill: #ffca93; }
+/* .theme-orange .surface-4 —— 原站未定义，落到全局默认 */
+.theme-orange .surface-5 { background-color: #471406; }
+.theme-orange .surface-5-outline { border-color: #471406; }
+.theme-orange .surface-5-fill-svg { fill: #471406; }
+
+/* pink —— 主色铺底 #ff9bd2，交互色 #b40082 */
+.theme-pink .main { background-color: #ff9bd2; }
+.theme-pink .main-outline { border-color: #ff9bd2; }
+.theme-pink .main-fill-svg { fill: #ff9bd2; }
+.theme-pink .interactive { background-color: #b40082; }
+.theme-pink .interactive-outline { border-color: #b40082; }
+.theme-pink .interactive-fill-svg { fill: #b40082; }
+.theme-pink .surface-1 { background-color: #f7edf2; }
+.theme-pink .surface-1-outline { border-color: #f7edf2; }
+.theme-pink .surface-1-fill-svg { fill: #f7edf2; }
+.theme-pink .surface-2 { background-color: #ecc2d9; }
+.theme-pink .surface-2-outline { border-color: #ecc2d9; }
+.theme-pink .surface-2-fill-svg { fill: #ecc2d9; }
+.theme-pink .surface-3 { background-color: #e495c0; }
+.theme-pink .surface-3-outline { border-color: #e495c0; }
+.theme-pink .surface-3-fill-svg { fill: #e495c0; }
+.theme-pink .surface-4 { background-color: #d26dac; }
+.theme-pink .surface-4-outline { border-color: #d26dac; }
+.theme-pink .surface-4-fill-svg { fill: #d26dac; }
+.theme-pink .surface-5 { background-color: #380232; }
+.theme-pink .surface-5-outline { border-color: #380232; }
+.theme-pink .surface-5-fill-svg { fill: #380232; }
+
+/* purple —— 主色铺底 #9961ff，交互色 #762de3 */
+.theme-purple .main { background-color: #9961ff; }
+.theme-purple .main-outline { border-color: #9961ff; }
+.theme-purple .main-fill-svg { fill: #9961ff; }
+.theme-purple .interactive { background-color: #762de3; }
+.theme-purple .interactive-outline { border-color: #762de3; }
+.theme-purple .interactive-fill-svg { fill: #762de3; }
+.theme-purple .surface-1 { background-color: #f7edff; }
+.theme-purple .surface-1-outline { border-color: #f7edff; }
+.theme-purple .surface-1-fill-svg { fill: #f7edff; }
+.theme-purple .surface-2 { background-color: #ebdcff; }
+.theme-purple .surface-2-outline { border-color: #ebdcff; }
+.theme-purple .surface-2-fill-svg { fill: #ebdcff; }
+.theme-purple .surface-3 { background-color: #d4bbff; }
+.theme-purple .surface-3-outline { border-color: #d4bbff; }
+.theme-purple .surface-3-fill-svg { fill: #d4bbff; }
+.theme-purple .surface-4 { background-color: #bd99ff; }
+.theme-purple .surface-4-outline { border-color: #bd99ff; }
+.theme-purple .surface-4-fill-svg { fill: #bd99ff; }
+.theme-purple .surface-5 { background-color: #260058; }
+.theme-purple .surface-5-outline { border-color: #260058; }
+.theme-purple .surface-5-fill-svg { fill: #260058; }
+
+/* red —— 主色铺底 #f94a36，交互色 #b91e17 */
+.theme-red .main { background-color: #f94a36; }
+.theme-red .main-outline { border-color: #f94a36; }
+.theme-red .main-fill-svg { fill: #f94a36; }
+.theme-red .interactive { background-color: #b91e17; }
+.theme-red .interactive-outline { border-color: #b91e17; }
+.theme-red .interactive-fill-svg { fill: #b91e17; }
+.theme-red .surface-1 { background-color: #ffedea; }
+.theme-red .surface-1-outline { border-color: #ffedea; }
+.theme-red .surface-1-fill-svg { fill: #ffedea; }
+.theme-red .surface-2 { background-color: #ffdad5; }
+.theme-red .surface-2-outline { border-color: #ffdad5; }
+.theme-red .surface-2-fill-svg { fill: #ffdad5; }
+.theme-red .surface-3 { background-color: #ffb4a9; }
+.theme-red .surface-3-outline { border-color: #ffb4a9; }
+.theme-red .surface-3-fill-svg { fill: #ffb4a9; }
+.theme-red .surface-4 { background-color: #ff8a7a; }
+.theme-red .surface-4-outline { border-color: #ff8a7a; }
+.theme-red .surface-4-fill-svg { fill: #ff8a7a; }
+.theme-red .surface-5 { background-color: #410001; }
+.theme-red .surface-5-outline { border-color: #410001; }
+.theme-red .surface-5-fill-svg { fill: #410001; }
+
+/* salmon —— 主色铺底 #ed6798，交互色 #d81261 */
+.theme-salmon .main { background-color: #ed6798; }
+.theme-salmon .main-outline { border-color: #ed6798; }
+.theme-salmon .main-fill-svg { fill: #ed6798; }
+.theme-salmon .interactive { background-color: #d81261; }
+.theme-salmon .interactive-outline { border-color: #d81261; }
+.theme-salmon .interactive-fill-svg { fill: #d81261; }
+.theme-salmon .surface-1 { background-color: #fde4ed; }
+.theme-salmon .surface-1-outline { border-color: #fde4ed; }
+.theme-salmon .surface-1-fill-svg { fill: #fde4ed; }
+.theme-salmon .surface-2 { background-color: #f9bad1; }
+.theme-salmon .surface-2-outline { border-color: #f9bad1; }
+.theme-salmon .surface-2-fill-svg { fill: #f9bad1; }
+.theme-salmon .surface-3 { background-color: #f48eb3; }
+.theme-salmon .surface-3-outline { border-color: #f48eb3; }
+.theme-salmon .surface-3-fill-svg { fill: #f48eb3; }
+.theme-salmon .surface-4 { background-color: #ed6798; }
+.theme-salmon .surface-4-outline { border-color: #ed6798; }
+.theme-salmon .surface-4-fill-svg { fill: #ed6798; }
+.theme-salmon .surface-5 { background-color: #430829; }
+.theme-salmon .surface-5-outline { border-color: #430829; }
+.theme-salmon .surface-5-fill-svg { fill: #430829; }
+
+/* tan —— 主色铺底 #d4baac，交互色 #765543 */
+.theme-tan .main { background-color: #d4baac; }
+.theme-tan .main-outline { border-color: #d4baac; }
+.theme-tan .main-fill-svg { fill: #d4baac; }
+.theme-tan .interactive { background-color: #765543; }
+.theme-tan .interactive-outline { border-color: #765543; }
+.theme-tan .interactive-fill-svg { fill: #765543; }
+.theme-tan .surface-1 { background-color: #f3eee4; }
+.theme-tan .surface-1-outline { border-color: #f3eee4; }
+.theme-tan .surface-1-fill-svg { fill: #f3eee4; }
+.theme-tan .surface-2 { background-color: #e8dfcf; }
+.theme-tan .surface-2-outline { border-color: #e8dfcf; }
+.theme-tan .surface-2-fill-svg { fill: #e8dfcf; }
+.theme-tan .surface-3 { background-color: #e0d1b6; }
+.theme-tan .surface-3-outline { border-color: #e0d1b6; }
+.theme-tan .surface-3-fill-svg { fill: #e0d1b6; }
+.theme-tan .surface-4 { background-color: #dfcaa9; }
+.theme-tan .surface-4-outline { border-color: #dfcaa9; }
+.theme-tan .surface-4-fill-svg { fill: #dfcaa9; }
+.theme-tan .surface-5 { background-color: #3f2b21; }
+.theme-tan .surface-5-outline { border-color: #3f2b21; }
+.theme-tan .surface-5-fill-svg { fill: #3f2b21; }
+
+/* teal —— 主色铺底 #40cec3，交互色 #007168 */
+.theme-teal .main { background-color: #40cec3; }
+.theme-teal .main-outline { border-color: #40cec3; }
+.theme-teal .main-fill-svg { fill: #40cec3; }
+.theme-teal .interactive { background-color: #007168; }
+.theme-teal .interactive-outline { border-color: #007168; }
+.theme-teal .interactive-fill-svg { fill: #007168; }
+.theme-teal .surface-1 { background-color: #e8fbfb; }
+.theme-teal .surface-1-outline { border-color: #e8fbfb; }
+.theme-teal .surface-1-fill-svg { fill: #e8fbfb; }
+.theme-teal .surface-2 { background-color: #b9e6e5; }
+.theme-teal .surface-2-outline { border-color: #b9e6e5; }
+.theme-teal .surface-2-fill-svg { fill: #b9e6e5; }
+.theme-teal .surface-3 { background-color: #80d0d0; }
+.theme-teal .surface-3-outline { border-color: #80d0d0; }
+.theme-teal .surface-3-fill-svg { fill: #80d0d0; }
+.theme-teal .surface-4 { background-color: #51bcb8; }
+.theme-teal .surface-4-outline { border-color: #51bcb8; }
+.theme-teal .surface-4-fill-svg { fill: #51bcb8; }
+.theme-teal .surface-5 { background-color: #032925; }
+.theme-teal .surface-5-outline { border-color: #032925; }
+.theme-teal .surface-5-fill-svg { fill: #032925; }
+
+/* terracotta —— 主色铺底 #e26c42，交互色 #a13f1c */
+.theme-terracotta .main { background-color: #e26c42; }
+.theme-terracotta .main-outline { border-color: #e26c42; }
+.theme-terracotta .main-fill-svg { fill: #e26c42; }
+.theme-terracotta .interactive { background-color: #a13f1c; }
+.theme-terracotta .interactive-outline { border-color: #a13f1c; }
+.theme-terracotta .interactive-fill-svg { fill: #a13f1c; }
+.theme-terracotta .surface-1 { background-color: #ffede8; }
+.theme-terracotta .surface-1-outline { border-color: #ffede8; }
+.theme-terracotta .surface-1-fill-svg { fill: #ffede8; }
+.theme-terracotta .surface-2 { background-color: #ffdbd0; }
+.theme-terracotta .surface-2-outline { border-color: #ffdbd0; }
+.theme-terracotta .surface-2-fill-svg { fill: #ffdbd0; }
+.theme-terracotta .surface-3 { background-color: #ffb59d; }
+.theme-terracotta .surface-3-outline { border-color: #ffb59d; }
+.theme-terracotta .surface-3-fill-svg { fill: #ffb59d; }
+.theme-terracotta .surface-4 { background-color: #ff8b64; }
+.theme-terracotta .surface-4-outline { border-color: #ff8b64; }
+.theme-terracotta .surface-4-fill-svg { fill: #ff8b64; }
+.theme-terracotta .surface-5 { background-color: #390c00; }
+.theme-terracotta .surface-5-outline { border-color: #390c00; }
+.theme-terracotta .surface-5-fill-svg { fill: #390c00; }
+
+/* yellow —— 主色铺底 #fbbc05，交互色 #fbbc05 */
+.theme-yellow .main { background-color: #fbbc05; }
+.theme-yellow .main-outline { border-color: #fbbc05; }
+.theme-yellow .main-fill-svg { fill: #fbbc05; }
+.theme-yellow .interactive { background-color: #fbbc05; }
+.theme-yellow .interactive-outline { border-color: #fbbc05; }
+.theme-yellow .interactive-fill-svg { fill: #fbbc05; }
+.theme-yellow .surface-1 { background-color: #ffefd5; }
+.theme-yellow .surface-1-outline { border-color: #ffefd5; }
+.theme-yellow .surface-1-fill-svg { fill: #ffefd5; }
+.theme-yellow .surface-2 { background-color: #ffe3ad; }
+.theme-yellow .surface-2-outline { border-color: #ffe3ad; }
+.theme-yellow .surface-2-fill-svg { fill: #ffe3ad; }
+.theme-yellow .surface-3 { background-color: #ffda7c; }
+.theme-yellow .surface-3-outline { border-color: #ffda7c; }
+.theme-yellow .surface-3-fill-svg { fill: #ffda7c; }
+.theme-yellow .surface-4 { background-color: #ffc552; }
+.theme-yellow .surface-4-outline { border-color: #ffc552; }
+.theme-yellow .surface-4-fill-svg { fill: #ffc552; }
+/* .theme-yellow .surface-5 —— 原站未定义，落到全局默认 */
+
+
+/* 18b. 品牌强调色 brand-accent-1..4 —— 固定为 Google 四色，不随 theme 走。
+   用在「这一块要强调、但它不是涂鸦主色」的地方（活动条、提示区）。
+   accent-1 蓝 / accent-2 黄 / accent-3 红 / accent-4 绿 */
+.brand-accent-1 .main { background-color: #4285f4; }
+.brand-accent-1 .main-outline { border-color: #4285f4; }
+.brand-accent-1 .main-fill-svg { fill: #4285f4; }
+.brand-accent-1 .interactive { background-color: #005ac1; }
+.brand-accent-1 .interactive-outline { border-color: #005ac1; }
+.brand-accent-1 .interactive-fill-svg { fill: #005ac1; }
+
+.brand-accent-2 .main { background-color: #fbbc05; }
+.brand-accent-2 .main-outline { border-color: #fbbc05; }
+.brand-accent-2 .main-fill-svg { fill: #fbbc05; }
+.brand-accent-2 .interactive { background-color: #fbbc05; }
+.brand-accent-2 .interactive-outline { border-color: #fbbc05; }
+.brand-accent-2 .interactive-fill-svg { fill: #fbbc05; }
+
+.brand-accent-3 .main { background-color: #f94a36; }
+.brand-accent-3 .main-outline { border-color: #f94a36; }
+.brand-accent-3 .main-fill-svg { fill: #f94a36; }
+.brand-accent-3 .interactive { background-color: #b91e17; }
+.brand-accent-3 .interactive-outline { border-color: #b91e17; }
+.brand-accent-3 .interactive-fill-svg { fill: #b91e17; }
+
+.brand-accent-4 .main { background-color: #29b571; }
+.brand-accent-4 .main-outline { border-color: #29b571; }
+.brand-accent-4 .main-fill-svg { fill: #29b571; }
+.brand-accent-4 .interactive { background-color: #006e2c; }
+.brand-accent-4 .interactive-outline { border-color: #006e2c; }
+.brand-accent-4 .interactive-fill-svg { fill: #006e2c; }
+
+/* 18c. 全局默认色梯 —— 不在任何 theme 里时用，取值等于 theme-blue 那条梯 */
+.surface-1 { background-color: #edf0ff; }
+.surface-1-outline { border-color: #edf0ff; }
+.surface-1-fill-svg { fill: #edf0ff; }
+.surface-2 { background-color: #d8e2ff; }
+.surface-2-outline { border-color: #d8e2ff; }
+.surface-2-fill-svg { fill: #d8e2ff; }
+.surface-3 { background-color: #adc6ff; }
+.surface-3-outline { border-color: #adc6ff; }
+.surface-3-fill-svg { fill: #adc6ff; }
+.surface-4 { background-color: #80aaff; }
+.surface-4-outline { border-color: #80aaff; }
+.surface-4-fill-svg { fill: #80aaff; }
+.surface-5 { background-color: #001a41; }
+.surface-5-outline { border-color: #001a41; }
+.surface-5-fill-svg { fill: #001a41; }
+
+/* 18d. 中性表面 —— 注意在 .doodle-module 里取值不同（白 / 近白 / 浅灰），
+   这是原站刻意的两级定义，不要合并成一套。 */
+.neutral-surface-1 { background-color: #fff; }
+.neutral-surface-2 { background-color: #f8f9fa; }
+.neutral-surface-3 { background-color: #f1f3f4; }
+.doodle-module .neutral-surface-1 { background-color: #fff; }
+.doodle-module .neutral-surface-2 { background-color: #fcfcfc; }
+.doodle-module .neutral-surface-3 { background-color: #f5f5f5; }
+
+/* 18e. 在任意底色上都安全的文字色（原站放在 .doodle-module 下的三个语义色） */
+.doodle-module .neutral_on_surface_primary { color: #000; }
+.doodle-module .neutral_on_surface_secondary { color: #4a4a4a; }
+.doodle-module .neutral_on_surface_inactive { color: #c9c9c9; }
+
+/* 18f. 背景纹理 —— 60×60 的重复图案，全部是 rgba(0,0,0,.1)，
+   所以叠在任何 theme 底色上都会自动带上那个色相。
+   起点偏移 -2px -2px 是为了让图案边缘正好被描边压住（原站原样）。 */
+[class*="background-pattern-"] {
+  background-position: -2px -2px;
+  background-size: 60px 60px;
+}
+.background-pattern-square {
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.1) 2px, transparent 0),
+    linear-gradient(180deg, rgba(0,0,0,.1) 2px, transparent 0);
+}
+.background-pattern-dots {
+  background-image: radial-gradient(circle, rgba(0,0,0,.1) 3px, transparent 0);
+}
+.background-pattern-stripes {
+  background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 52.5%, transparent 0, transparent);
+}
+
+/* 18g. 模块分隔线 —— 每个内容区块的底边，纯黑 1px */
+.doodle-module { border-bottom: 1px solid #000; }
+.doodle-module.editorial,
+.doodle-module.not-found,
+.qna-carousel.doodle-module { border-bottom: none; }
+
+/* ------------------------------------------------------ 20. 检索页 search-doodle */
+.search-doodle { font-family: var(--font-title); }
+
+.search-doodle__box { padding: 24px 0; }
+@media (min-width: 1024px) { .search-doodle__box { padding: 32px 0 24px; } }
+
+.search-doodle__box-icon { height: 24px; width: 24px; flex: none; }
+@media (min-width: 1024px) { .search-doodle__box-icon { height: 32px; width: 32px; } }
+
+.search-doodle__box-wrapper {
+  align-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 8px 10px 8px 20px;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .search-doodle__box-wrapper { gap: 24px; padding: 18px 24px 18px 40px; }
+}
+
+.search-doodle__box-input {
+  border: none;
+  border-radius: var(--radius-pill);
+  flex: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  width: 100%;
+  background: transparent;
+}
+@media (min-width: 1024px) { .search-doodle__box-input { font-size: 24px; } }
+.search-doodle__box-input::placeholder { color: #4a4a4a; }
+.search-doodle__box-input:focus-visible { outline: none; }
+
+/* 聚焦时外面浮一圈蓝描边（兄弟选择器，input 必须紧邻 border 元素） */
+.search-doodle__box-input-border {
+  border: 3px solid rgba(25,103,210,0);
+  border-radius: var(--radius-pill);
+  height: calc(100% + 4px);
+  left: -2px; top: -2px;
+  pointer-events: none;
+  position: absolute;
+  transition: border-color .25s ease-in-out;
+  width: calc(100% + 4px);
+  z-index: 10;
+}
+.search-doodle__box-input:focus-visible ~ .search-doodle__box-input-border {
+  border-color: var(--color-focus);
+}
+
+.search-doodle__box-button_wrapper { display: grid; grid-template-columns: 1fr; }
+.search-doodle__box-button_search { background-color: #4285f4; border-color: #4285f4; color: #fff; }
+.search-doodle__box-button_random { background-color: #fff; border-color: #000; color: #000; }
+.search-doodle__box-button_search-input { display: none; }
+@media (min-width: 1024px) { .search-doodle__box-button_search-input { display: initial; } }
+
+.search-doodle__box-button_random,
+.search-doodle__box-button_search {
+  align-items: center;
+  border-radius: var(--radius-pill);
+  border-style: solid;
+  border-width: 1px;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  line-height: 100%;
+  padding: 12px 16px;
+}
+@media (min-width: 1024px) {
+  .search-doodle__box-button_random,
+  .search-doodle__box-button_search { padding: 12px 24px; }
+}
+.search-doodle__box-button_random:not(.active),
+.search-doodle__box-button_search:not(.active) { display: none; visibility: hidden; }
+.search-doodle__box-button_random .glue-icon,
+.search-doodle__box-button_search .glue-icon { height: 16px; width: 16px; }
+@media (min-width: 1024px) {
+  .search-doodle__box-button_random .glue-icon,
+  .search-doodle__box-button_search .glue-icon { height: 24px; width: 24px; }
+}
+
+.search-doodle__box__tag {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  gap: 12px 16px;
+  height: 0;
+  overflow: hidden;
+  transition: height .1s ease-out;
+}
+.search-doodle__box__tag.has-one-element { height: 34px; }
+.search-doodle__box__tag.has-elements { height: auto; }
+
+.search-doodle__box__tag_wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px 16px;
+  margin-top: 24px;
+}
+@media (min-width: 1024px) { .search-doodle__box__tag_wrapper { flex-flow: row wrap; } }
+
+.search-doodle__box__tag_clear { font-size: 14px; font-weight: 500; padding: 6px 18px; }
+.search-doodle__box__tag_clear:not(.active) { display: none; visibility: hidden; }
+
+/* 已选条件 / 勾选项 chip。label 复用同一套外观，靠内部 checkbox 的 :checked 切图标 */
+.search-doodle__tag-item {
+  align-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  margin: 0 8px 8px 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.search-doodle__tag-item:hover { background: var(--glue-grey-100); }
+
+.search-doodle__tag-item-label { white-space: nowrap; }
+
+/* 图标区两个 svg 叠在一起：未选中显示 checkmark，选中显示 close（表示可取消） */
+.search-doodle__tag-item-icon { display: grid; grid-template-columns: 1fr; height: 16px; width: 16px; }
+.search-doodle__tag-item-icon .glue-icon {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  height: 16px;
+  width: 16px;
+}
+.search-doodle__tag-item-icon .glue-icon.checkmark { opacity: 0; }
+.search-doodle__tag-item-icon .glue-icon.close { opacity: 1; }
+.search-doodle__filter-panel__content-topics__input-checkbox:checked
+  ~ .search-doodle__tag-item-icon .glue-icon.checkmark { opacity: 1; }
+.search-doodle__filter-panel__content-topics__input-checkbox:checked
+  ~ .search-doodle__tag-item-icon .glue-icon.close { opacity: 0; }
+
+/* 选中态的 chip 加底色 */
+.search-doodle__tag-item:has(> input:checked) { background: var(--glue-blue-50); }
+
+/* 颜色圆点选择器 */
+.search-doodle__filter-panel__content-topics,
+.search-doodle__filter-panel__content-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-doodle__filter-panel__content-circle {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.search-doodle__filter-panel__content-circle__input-checkbox {
+  display: none;
+  visibility: hidden;
+}
+.search-doodle__filter-panel__content-circle__input-circle {
+  background-color: #fff;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 正方形靠「宽 80 + 高 0 + padding-bottom 补足」——因此这两个元素必须是
+     块级（<div>）。用 <span> 会因行内元素忽略宽高而塌成一根细条。 */
+  display: block;
+  height: 0;
+  padding-bottom: calc(100% - 2px);
+  position: relative;
+  width: 80px;
+}
+.search-doodle__filter-panel__content-circle__input-circle-container { display: block; }
+.search-doodle__filter-panel__content-circle__input-circle,
+.search-doodle__filter-panel__content-circle__input-circle-container {
+  border: 1px solid var(--color-line);
+  border-radius: 100px;
+}
+.search-doodle__filter-panel__content-circle__input-circle-icon {
+  background-color: #000;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 24px;
+  opacity: 0;
+  padding: 4px;
+  position: absolute;
+  right: 5%; top: -5%;
+  transition: opacity .15s ease;
+  width: 24px;
+  z-index: 2;
+}
+.search-doodle__filter-panel__content-circle__input-circle-icon .glue-icon {
+  fill: #fff;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  height: 16px;
+  width: 16px;
+}
+.search-doodle__filter-panel__content-circle__input-text,
+.search-doodle__filter-panel__content-circle__input-circle-text { max-width: 120px; }
+
+.search-doodle__filter-panel__content-circle__input-label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+  text-align: center;
+}
+
+/* 勾选后：圆点描边加粗 + 角标出现 */
+.search-doodle__filter-panel__content-circle__input-checkbox:checked
+  ~ .search-doodle__filter-panel__content-circle__input-circle-container
+  .search-doodle__filter-panel__content-circle__input-circle {
+  height: calc(100% + 2px);
+  left: -1px; top: -1px;
+  width: calc(100% + 2px);
+}
+.search-doodle__filter-panel__content-circle__input-checkbox:checked
+  ~ .search-doodle__filter-panel__content-circle__input-circle-container
+  .search-doodle__filter-panel__content-circle__input-circle-icon { opacity: 1; }
+
+/* 每个色值一个背景 —— 色块颜色由 CSS 给，不要写成内联 style */
+.search-doodle__filter-panel__content-circle__input-checkbox[value=gray] ~ * .circle-color { background-color: #c2c2c2; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=tan] ~ * .circle-color { background-color: #d4baac; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=brown] ~ * .circle-color { background-color: #b47943; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=terracotta] ~ * .circle-color { background-color: #e26c42; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=red] ~ * .circle-color { background-color: #f94a36; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=orange] ~ * .circle-color { background-color: #ff701f; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=yellow] ~ * .circle-color { background-color: #fbbc05; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=lime] ~ * .circle-color { background-color: #d9dd0b; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=grass] ~ * .circle-color { background-color: #70c114; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=green] ~ * .circle-color { background-color: #29b571; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=emerald] ~ * .circle-color { background-color: #278c68; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=teal] ~ * .circle-color { background-color: #40cec3; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=light-blue] ~ * .circle-color { background-color: #76d1ff; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=blue] ~ * .circle-color { background-color: #4285f4; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=dark-blue] ~ * .circle-color { background-color: #2e42d1; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=purple] ~ * .circle-color { background-color: #9961ff; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=magenta] ~ * .circle-color { background-color: #ed77ff; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=pink] ~ * .circle-color { background-color: #ff9bd2; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=salmon] ~ * .circle-color { background-color: #ed6798; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=black] ~ * .circle-color { background-color: #000; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=white] ~ * .circle-color { background-color: #fff; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=grey] ~ * .circle-color { background-color: #80868b; }
+.search-doodle__filter-panel__content-circle__input-checkbox[value=light_blue] ~ * .circle-color { background-color: #aecbfa; }
+/* multicolor 没有单一色值，用一张 SVG 当底图 */
+.search-doodle__filter-panel__content-circle__input-circle .circle-color-bg {
+  height: 100%; left: 0; top: 0; width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+/* 结果区 */
+.search-doodle__results-wrapper {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  margin-top: 32px;
+}
+@media (min-width: 600px) {
+  .search-doodle__results-wrapper { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .search-doodle__results-wrapper { grid-template-columns: repeat(3, 1fr); }
+}
+.search-doodle__results-loading { display: none; justify-content: center; padding: 48px 0; }
+.search-doodle__results-loading.active { display: flex; }
+.search-doodle__results-empty { display: none; text-align: center; padding: 64px 0; }
+.search-doodle__results-empty.active { display: block; }
+.search-doodle__results-empty-icon { display: block; margin: 0 auto 24px; max-width: 220px; }
+.search-doodle__results-empty-label {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.search-doodle__results-empty-description {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  color: var(--color-muted);
+}
+.search-doodle__results-empty-cta { margin: 0 auto; }
+.search-doodle__results-button { margin: 40px auto 0; }
+.search-doodle__results-button.hidden { display: none; }
+
+/* 展开/折叠面板（筛选组复用 Glue 的 expansion-panel） */
+.glue-expansion-panel { border-bottom: 1px solid var(--color-line); }
+.glue-expansion-panel__toggle { margin: 0; }
+.glue-expansion-panel__button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 8px;
+  justify-content: space-between;
+  line-height: 1.5;
+  padding: 20px 0;
+  width: 100%;
+}
+.glue-expansion-panel__header-counter { color: var(--color-muted); margin-left: auto; }
+.glue-expansion-panel__header-arrow { transition: transform .2s ease; }
+.glue-expansion-panel[aria-expanded="true"] .glue-expansion-panel__header-arrow,
+.glue-expansion-panel__button[aria-expanded="true"] .glue-expansion-panel__header-arrow {
+  transform: rotate(180deg);
+}
+.glue-expansion-panel__content { padding: 0 0 24px; }
+.glue-expansion-panel__content[hidden] { display: none; }
+
+/* ------------------------------------------------ 21. 无障碍 / 动效降级 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (-ms-high-contrast: active), (forced-colors: active) {
+  .glue-button { forced-color-adjust: none; }
+  .glue-footer { border-top: 1px solid #dadce0; }
+  .doodle-card-wrapper, .border-bottom { border-color: ButtonText; }
+  .glue-carousel__button { background: buttonFace; border: 2px solid transparent; color: buttonText; opacity: 1; }
+  .glue-carousel__button svg { fill: buttonText; }
+}
+
+</style>
+
+  <meta name="viewport" content="width=device-width">
+
+  
+  
+  
+  
+  
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Google Doodles",
+    "url": "/"
+  }
+  </script>
+</head>
+
+<body>
+<div style="background:#202124;color:#fff;font:500 13px/1.4 system-ui,sans-serif;padding:8px 16px;text-align:center">Google Doodles 风格预览 · 首页 / 落地页 · 图片为 SVG 占位，字体与样式为真实资源 · 19 套主题色见 palette.html</div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="google-color-logo" viewBox="0 0 24 24"><rect x="1" y="8" width="22" height="8" rx="4" fill="#4285f4"/></symbol><symbol id="menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="#5f6368" stroke-width="2"/></symbol><symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="#5f6368" stroke-width="2"/><path d="M15 15l5 5" stroke="#5f6368" stroke-width="2"/></symbol><symbol id="expand-more" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" fill="none" stroke="#5f6368" stroke-width="2"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="doodle-logo" viewBox="0 0 24 24"><rect x="1" y="8" width="22" height="8" rx="4" fill="#4285f4"/></symbol><symbol id="right-arrow" viewBox="0 0 24 24"><path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="right-arrow-doodles" viewBox="0 0 24 24"><path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="left-white-arrow-tout-carousel" viewBox="0 0 24 24"><path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="right-white-arrow-tout-carousel" viewBox="0 0 24 24"><path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="stars" viewBox="0 0 24 24"><path d="M12 4l2.2 5.3 5.8.5-4.4 3.8 1.3 5.7-4.9-3-4.9 3 1.3-5.7L4 9.8l5.8-.5z" fill="#fbbc05"/></symbol><symbol id="refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6" fill="none" stroke="#5f6368" stroke-width="2"/><path d="M20 4v5h-5" fill="none" stroke="#5f6368" stroke-width="2"/></symbol><symbol id="checkmark" viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol><symbol id="close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol><symbol id="sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z" fill="currentColor"/></symbol></svg>
+
+
+<header class="glue-header glue-header--single glue-header--no-cta" aria-expanded="false">
+  <a href="#content" class="glue-header__link glue-header__skip-content">Jump to content</a>
+
+  
+  <div class="glue-header__bar glue-header__bar--mobile">
+    <div class="glue-header__tier">
+      <div class="glue-header__container">
+
+        <div class="glue-header__lock-up">
+          <div class="glue-header__hamburger">
+            <button class="glue-header__drawer-toggle-btn"
+                    aria-label="Open the navigation drawer"
+                    aria-controls="glue-drawer-2465973" aria-expanded="false" aria-haspopup="true"
+                    data-g-event-trigger="click" data-g-event="module_header"
+                    data-g-module_name="header" data-g-template_id="header_hamburger">
+              <svg class="glue-icon glue-icon--24px" role="presentation" aria-hidden="true">
+                <use href="#menu"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="mobile-header-wrapper">
+            <div class="glue-header__logo">
+              <a class="glue-header__logo-link" href="/" title="Google doodles">
+                <div class="glue-header__logo-container">
+                  <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                    <use href="#google-color-logo"></use>
+                  </svg>
+                </div>
+                <span class="glue-header__logo--product">
+                  <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                    <use href="#doodle-logo"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glue-header__tier">
+          <div class="glue-header__container">
+            <div class="glue-header__supplemental">
+              <ul class="glue-header__list">
+                <li class="glue-header__item">
+                  <a class="glue-header__link" href="/search/" aria-label="Search">
+                    <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--24px">
+                      <use href="#search"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="glue-header__bar glue-header__bar--desktop glue-header__drawer"
+       id="glue-drawer-2465973" style="position: static; top: -64px;">
+    <div class="glue-header__tier">
+
+      
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link" href="/" title="Google doodles">
+              <div class="glue-header__logo-container">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="#google-color-logo"></use>
+                </svg>
+              </div>
+              <span class="glue-header__logo--product">
+                <svg class="glue-header__logo-svg" role="presentation" aria-hidden="true">
+                  <use href="#doodle-logo"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="glue-header__container glue-header__container--linkbar">
+        <nav class="glue-header__link-bar">
+          <ul class="glue-header__list">
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/search/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="Library" data-g-cta_url="/search/"
+                 data-g-template_id="header_item" data-g-template_position="1/3">Library</a>
+            </li>
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/about/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="About" data-g-cta_url="/about/"
+                 data-g-template_id="header_item" data-g-template_position="2/3">About</a>
+            </li>
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/rss/"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_text="RSS" data-g-cta_url="/rss/"
+                 data-g-template_id="header_item" data-g-template_position="3/3">RSS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      
+      <div class="glue-header__container">
+        <div class="glue-header__supplemental">
+          <ul class="glue-header__list">
+            <li class="glue-header__item">
+              <a class="glue-header__link" href="/search/" aria-label="Search"
+                 data-g-event-trigger="click" data-g-event="module_header"
+                 data-g-module_name="header" data-g-cta_type="button"
+                 data-g-cta_url="/search/" data-g-template_id="header_search">
+                <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--18px">
+                  <use href="#search"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="glue-header__drawer-backdrop" aria-label="close menu"></div>
+</header>
+
+
+
+<main id="content">
+  <div class="main-page">
+
+
+  
+  <div class="hero-tag-carousel doodle-module floating-buttons" id="section-1">
+    <div class="background-pattern-dots">
+      <div class="glue-carousel"
+           aria-label="Featured Doodles"
+           data-glue-carousel-cards-per-page="1"
+           data-glue-carousel-cyclical="true"
+           data-glue-carousel-cyclical-aditional-cards="0">
+
+        <div class="glue-carousel__viewport">
+
+          <div class="glue-carousel__list hero-tag-carousel__list">
+
+            
+            <div class="glue-carousel__item hero-tag-carousel__item"
+                 id="glue-carousel-1" data-home-slide-index="1" aria-label="Culture">
+
+              <div class="hero-tag-carousel__collage active">
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-cherry-blossom-season/"
+                   aria-label="Celebrating Cherry Blossom Season"
+                   data-g-event="module_hero_tag_carousel" data-g-module_name="hero_tag_carousel"
+                   data-g-cta_type="button" data-g-template_position="1/9">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ECelebrating%20Cherry%20Blossom%3C/text%3E%3C/svg%3E"
+                       alt="Celebrating Cherry Blossom Season">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/nba-playoffs-2025-am/" aria-label="NBA Playoffs 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ENBA%20Playoffs%202025%20-%20AM%3C/text%3E%3C/svg%3E"
+                       alt="NBA Playoffs 2025 - AM">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-house-music/" aria-label="Celebrating House Music">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ECelebrating%20House%20Music%3C/text%3E%3C/svg%3E"
+                       alt="Celebrating House Music">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-the-appalachian-trail/"
+                   aria-label="Celebrating the Appalachian Trail">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ECelebrating%20the%20Appalachia%3C/text%3E%3C/svg%3E"
+                       alt="Celebrating the Appalachian Trail">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/earth-day-2025/" aria-label="Earth Day 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EEarth%20Day%202025%3C/text%3E%3C/svg%3E"
+                       alt="Earth Day 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/fourth-of-july-2025/" aria-label="Fourth of July 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EFourth%20of%20July%202025%3C/text%3E%3C/svg%3E"
+                       alt="Fourth of July 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/halloween-2024/" aria-label="Halloween 2024">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EHalloween%202024%3C/text%3E%3C/svg%3E" alt="Halloween 2024">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/lunar-new-year-2025/" aria-label="Lunar New Year 2025">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ELunar%20New%20Year%202025%3C/text%3E%3C/svg%3E" alt="Lunar New Year 2025">
+                </a>
+
+                <a class="hero-tag-carousel__collage-card"
+                   href="/doodle/celebrating-ukiyo-e/" aria-label="Celebrating Ukiyo-e">
+                  <div class="hero-tag-carousel__collage-card-bg"></div>
+                  <img class="hero-tag-carousel__collage-card-img"
+                       src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ECelebrating%20Ukiyo-e%3C/text%3E%3C/svg%3E" alt="Celebrating Ukiyo-e">
+                </a>
+
+              </div>
+            </div>
+
+            
+            <div class="glue-carousel__item hero-tag-carousel__item"
+                 id="glue-carousel-2" data-home-slide-index="2" aria-label="Sports">
+              <div class="hero-tag-carousel__collage">
+                
+              </div>
+            </div>
+
+          </div>
+
+          
+          <div class="hero-tag-carousel__main glue-text-center">
+            <p class="hero-tag-carousel__main-text">
+              Doodles are celebrations of <doodles-tags></doodles-tags>
+            </p>
+
+            <div class="hero-tag-carousel__main-cta">
+              
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-green">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="1" aria-label="Culture" tabindex="-1" href="/search/"
+                   data-g-event="module_hero_tag_carousel" data-g-module_name="hero_tag_carousel"
+                   data-g-cta_type="button" data-g-cta_text="Culture">Culture</a>
+              </span>
+
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-brown">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="2" aria-label="Places" tabindex="-1" href="/search/"
+                   data-g-cta_type="button" data-g-cta_text="Places">Places</a>
+              </span>
+
+              <span class="hero-tag-carousel__main-cta-wrapper doodle-module theme-pink">
+                <a class="hero-tag-carousel__main-cta-link theme-word main-outline"
+                   data-home-cta-index="3" aria-label="Nature" tabindex="-1" href="/search/"
+                   data-g-cta_type="button" data-g-cta_text="Nature">Nature</a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="tout-carousel-navigation">
+          <button aria-label="Previous slide" id="prev-mobile-btn"
+                  class="glue-button glue-button--high-emphasis glue-button--icon interactive"
+                  data-g-event="module_tout_carousel" data-g-cta_type="carousel_left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="glue-icon glue-icon--24px"
+                 role="presentation" aria-hidden="true">
+              <use href="#left-white-arrow-tout-carousel"></use>
+            </svg>
+          </button>
+
+          <div class="glue-carousel__navigation"
+               aria-label="Go to slide $glue_carousel_page_number$"
+               data-glue-carousel-navigation-label="Go to slide $glue_carousel_page_number$"></div>
+
+          <button aria-label="Next slide" id="next-mobile-btn"
+                  class="glue-button glue-button--high-emphasis glue-button--icon interactive"
+                  data-g-event="module_tout_carousel" data-g-cta_type="carousel_right">
+            <svg xmlns="http://www.w3.org/2000/svg" class="glue-icon glue-icon--24px"
+                 role="presentation" aria-hidden="true">
+              <use href="#right-white-arrow-tout-carousel"></use>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="full-bleed-map doodle-module theme-gray" id="section-3">
+    <div class="background background-pattern-square">
+
+      <div class="full-bleed-map-header">
+        <div class="eyebrow">
+          <svg role="presentation" aria-hidden="true" class="glue-icon">
+            <use href="#stars"></use>
+          </svg>
+          <span>Discover more Doodles</span>
+        </div>
+        
+        <div class="title">
+          <h2>Find the Doodle that started it all</h2>
+        </div>
+      </div>
+
+      
+      <div class="map-wrapper">
+        <div class="map-container">
+          <div class="mapChart" id="mapChart"></div>
+        </div>
+      </div>
+
+      <div class="glue-page">
+        <div class="cards-stack-grid">
+          <div class="doodle-card-wrapper">
+            <a href="/doodle/100th-anniversary-of-flight/" class="doodle-card-link">
+              <div class="doodle-card">
+                <div class="doodle-card-img">
+                  <img loading="lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f1f3f4%22/%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%239aa0a6%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E100th%20Anniversary%20of%20Fligh%3C/text%3E%3C/svg%3E"
+                       alt="100th Anniversary of Flight">
+                </div>
+                <div class="doodle-card-content">
+                  <div class="doodle-card-content__date">Dec 17, 2003</div>
+                  <div class="doodle-card-content__event">100th Anniversary of Flight</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="doodle-module cards-stack toggle-quote" id="section-6">
+    <div class="background-pattern-square">
+      <div class="glue-page">
+
+        <object aria-label="Doodles" class="cards-stack-logo" type="image/svg+xml"
+                data="/static/logo-doodle-color.svg"></object>
+
+        <div class="cards-stack-content-wrapper">
+
+          <button aria-label="Change card" class="cards-stack-content-change">
+            <svg role="presentation" aria-hidden="true" class="glue-icon">
+              <use href="#refresh"></use>
+            </svg>
+          </button>
+
+          <div class="cards-stack-content-list">
+
+            <div class="cards-stack-content-square"></div>
+            <div class="cards-stack-content-square"></div>
+            <div class="cards-stack-content-square"></div>
+
+            
+            <div class="cards-stack-content-square content-card">
+              <div class="cards-stack-content-square-item active glue-text-center">
+                <p class="cards-stack-content-square-eyebrow">Did you know?</p>
+                <p class="cards-stack-content-square-quote">
+                  <span>The very first Doodle launched as an “out of office” message of sorts
+                        when company founders Larry and Sergey went on vacation.</span>
+                </p>
+                <a class="cards-stack-content-square-cta" href="/about/" aria-label="Learn More">
+                  <span>Learn More</span>
+                  <svg role="presentation" aria-hidden="true" class="glue-icon glue-icon--arrow">
+                    <use href="#right-arrow"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="cards-stack-content-square"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</main>
+
+
+
+<footer class="glue-footer">
+  <h2 class="glue-visually-hidden">Footer Links</h2>
+
+  <nav class="glue-footer__site-links">
+    <div class="glue-footer__site-links-grid glue-footer__site-links-grid--1-col">
+      <div class="glue-footer__site-links-column">
+
+        <h3 class="glue-footer__site-links-header">
+          <span class="glue-footer__site-links-header-button" id="column-1-toggle">
+            <span class="glue-footer__site-links-header-text">Doodles</span>
+            <svg role="presentation" aria-hidden="true"
+                 class="glue-icon glue-icon--footer glue-expansion-panel__header-arrow">
+              <use href="#expand-more"></use>
+            </svg>
+          </span>
+        </h3>
+
+        <div class="glue-footer__site-links-list" id="column-1-content">
+          <ul class="glue-no-bullet" role="list">
+            <li class="glue-footer__site-links-list-item">
+              <a class="glue-footer__link" href="/search/"
+                 data-g-event-trigger="click" data-g-event="module_footer"
+                 data-g-module_name="footer" data-g-cta_type="button"
+                 data-g-cta_text="Library" data-g-cta_url="/search/"
+                 data-g-template_id="footer_item" data-g-template_position="1/2">Library</a>
+            </li>
+            <li class="glue-footer__site-links-list-item">
+              <a class="glue-footer__link" href="/about/"
+                 data-g-event-trigger="click" data-g-event="module_footer"
+                 data-g-module_name="footer" data-g-cta_type="button"
+                 data-g-cta_text="About" data-g-cta_url="/about/"
+                 data-g-template_id="footer_item" data-g-template_position="2/2">About</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <section class="glue-footer__global">
+    <p class="glue-footer__copyright">Copyright © 2026 → ∞ ZVI and Google will always be together.</p>
+  </section>
+</footer>
+
+
+</body>
+</html>

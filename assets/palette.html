@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google Doodles 配色板 · 19 套主题</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--ink:#000;--line:#000;--muted:#4a4a4a;--bg:#fff;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Google Sans Text','Google Sans',Roboto,Arial,sans-serif;}
+h1,h2{font-family:'Google Sans Display','Google Sans',Arial,sans-serif;font-weight:400;margin:0}
+header{padding:48px 28px 24px;max-width:1400px;margin:0 auto;
+  border-bottom:1px solid var(--line)}
+header p{margin:12px 0 0;color:var(--muted);max-width:62ch;line-height:1.55}
+header code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;
+  background:#f1f3f4;padding:1px 5px;border-radius:4px}
+main{max-width:1400px;margin:0 auto;padding:28px}
+.tip{border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:32px;
+  background:#fff;line-height:1.6}
+.tip b{font-weight:500}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.card>h2{font-size:20px;padding:14px 16px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card>h2 span{font-family:'Google Sans Text',sans-serif;font-size:12px;color:var(--muted);
+  font-weight:400;text-align:right;line-height:1.3}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;
+  border-bottom:1px solid var(--line);font-family:'Google Sans',Arial,sans-serif;
+  font-size:14px;font-weight:500}
+.bar em{font-style:normal;font-size:11px;font-weight:400;opacity:.72;
+  font-family:ui-monospace,Menlo,Consolas,monospace}
+.steps{display:flex;border-bottom:1px solid var(--line)}
+.step{flex:1;height:56px;display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:4px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:9px;
+  color:rgba(0,0,0,.55)}
+.step.s5{color:rgba(255,255,255,.75)}
+.legend{padding:10px 16px;font-size:11.5px;color:var(--muted);line-height:1.5;
+  font-family:'Google Sans Text',sans-serif}
+footer{max-width:1400px;margin:0 auto;padding:28px;color:var(--muted);font-size:13px;
+  border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Google Doodles 配色板</h1>
+  <p>19 套主题，每套自带一条 6 档色梯：<code>main</code> 大面积铺底，<code>interactive</code> 给按钮和 chip，<code>surface-1..5</code> 由浅到深做层次。数值逐条解析自原站 <code>index.min.css</code>，本页由 <code>build_preview.py</code> 从 <code>doodles-style.css</code> 直接生成，改了样式表会自动同步。</p>
+</header>
+<main>
+  <div class="tip">色块里的文字颜色是<b>按 WCAG 对比度实测选的</b>，不是凭感觉：19 套主题的 <code>main</code> 里，18 套都是黑字对比度更高 —— 所以 Doodles 是「彩底 + 黑字 + 黑描边」，不是 Material 那种「彩底 + 白字」。唯一例外是 <code>dark-blue</code>。带 <code>—</code> 的格子表示原站没定义这一档，会落到全局默认（= theme-blue 的梯）。</div>
+  <div class="grid">
+<article class="card"><h2>dark-blue<span>浓郁庄重，main 上要白字</span></h2><div class="bar" style="background:#2e42d1;color:#fff">main<em>#2e42d1</em></div><div class="bar" style="background:#2e42d1;color:#fff">interactive<em>#2e42d1</em></div><div class="steps"><div class="step" style="background:#dae2ff">1</div><div class="step" style="background:#b9c8ff">2</div><div class="step" style="background:#919cff">3</div><div class="step" style="background:#6a70f4">4</div><div class="step s5" style="background:#050b45">5</div></div><p class="legend">surface-1 → 5：#dae2ff · #b9c8ff · #919cff · #6a70f4 · #050b45</p></article>
+<article class="card"><h2>blue<span>默认安全牌，科技/产品</span></h2><div class="bar" style="background:#4285f4;color:#000">main<em>#4285f4</em></div><div class="bar" style="background:#005ac1;color:#fff">interactive<em>#005ac1</em></div><div class="steps"><div class="step" style="background:#edf0ff">1</div><div class="step" style="background:#d8e2ff">2</div><div class="step" style="background:#adc6ff">3</div><div class="step" style="background:#80aaff">4</div><div class="step s5" style="background:#001a41">5</div></div><p class="legend">surface-1 → 5：#edf0ff · #d8e2ff · #adc6ff · #80aaff · #001a41</p></article>
+<article class="card"><h2>light-blue<span>清爽天空感</span></h2><div class="bar" style="background:#76d1ff;color:#000">main<em>#76d1ff</em></div><div class="bar" style="background:#00739f;color:#fff">interactive<em>#00739f</em></div><div class="steps"><div class="step" style="background:#daf6ff">1</div><div class="step" style="background:#bce9ff">2</div><div class="step" style="background:#82d1ea">3</div><div class="step" style="background:#70bbe4">4</div><div class="step s5" style="background:#102646">5</div></div><p class="legend">surface-1 → 5：#daf6ff · #bce9ff · #82d1ea · #70bbe4 · #102646</p></article>
+<article class="card"><h2>teal<span>水感，介于蓝绿</span></h2><div class="bar" style="background:#40cec3;color:#000">main<em>#40cec3</em></div><div class="bar" style="background:#007168;color:#fff">interactive<em>#007168</em></div><div class="steps"><div class="step" style="background:#e8fbfb">1</div><div class="step" style="background:#b9e6e5">2</div><div class="step" style="background:#80d0d0">3</div><div class="step" style="background:#51bcb8">4</div><div class="step s5" style="background:#032925">5</div></div><p class="legend">surface-1 → 5：#e8fbfb · #b9e6e5 · #80d0d0 · #51bcb8 · #032925</p></article>
+<article class="card"><h2>emerald<span>沉稳的深绿</span></h2><div class="bar" style="background:#278c68;color:#000">main<em>#278c68</em></div><div class="bar" style="background:#006d46;color:#fff">interactive<em>#006d46</em></div><div class="steps"><div class="step" style="background:#d9ffec">1</div><div class="step" style="background:#99ecce">2</div><div class="step" style="background:#5bd2a7">3</div><div class="step" style="background:#3aba8c">4</div><div class="step s5" style="background:#00250a">5</div></div><p class="legend">surface-1 → 5：#d9ffec · #99ecce · #5bd2a7 · #3aba8c · #00250a</p></article>
+<article class="card"><h2>green<span>鲜明、生机</span></h2><div class="bar" style="background:#29b571;color:#000">main<em>#29b571</em></div><div class="bar" style="background:#006e2c;color:#fff">interactive<em>#006e2c</em></div><div class="steps"><div class="step" style="background:#d6fad7">1</div><div class="step" style="background:#aff8bb">2</div><div class="step" style="background:#85dd95">3</div><div class="step" style="background:#66c57a">4</div><div class="step s5" style="background:#002108">5</div></div><p class="legend">surface-1 → 5：#d6fad7 · #aff8bb · #85dd95 · #66c57a · #002108</p></article>
+<article class="card"><h2>grass<span>草绿，偏跳</span></h2><div class="bar" style="background:#70c114;color:#000">main<em>#70c114</em></div><div class="bar" style="background:#4b8e00;color:#000">interactive<em>#4b8e00</em></div><div class="steps"><div class="step" style="background:#e9fdc9">1</div><div class="step" style="background:#d5f2a6">2</div><div class="step" style="background:#bde482">3</div><div class="step" style="background:#a9d64c">4</div><div class="step s5" style="background:#143607">5</div></div><p class="legend">surface-1 → 5：#e9fdc9 · #d5f2a6 · #bde482 · #a9d64c · #143607</p></article>
+<article class="card"><h2>lime<span>柠檬黄绿，最跳之一</span></h2><div class="bar" style="background:#d9dd0b;color:#000">main<em>#d9dd0b</em></div><div class="bar" style="background:#a79b00;color:#000">interactive<em>#a79b00</em></div><div class="steps"><div class="step" style="background:#f6f6e3">1</div><div class="step" style="background:#efefbe">2</div><div class="step" style="background:#e7e896">3</div><div class="step" style="background:#dee170">4</div><div class="step s5" style="background:#3c3408">5</div></div><p class="legend">surface-1 → 5：#f6f6e3 · #efefbe · #e7e896 · #dee170 · #3c3408</p></article>
+<article class="card"><h2>yellow<span>Google 黄，欢快/警示</span></h2><div class="bar" style="background:#fbbc05;color:#000">main<em>#fbbc05</em></div><div class="bar" style="background:#fbbc05;color:#000">interactive<em>#fbbc05</em></div><div class="steps"><div class="step" style="background:#ffefd5">1</div><div class="step" style="background:#ffe3ad">2</div><div class="step" style="background:#ffda7c">3</div><div class="step" style="background:#ffc552">4</div><div class="step" style="background:repeating-linear-gradient(45deg,#fff 0 6px,#e8eaed 6px 12px);color:#5f6368">—</div></div><p class="legend">surface-1 → 5：#ffefd5 · #ffe3ad · #ffda7c · #ffc552 · —</p></article>
+<article class="card"><h2>orange<span>南瓜橙，活力</span></h2><div class="bar" style="background:#ff701f;color:#000">main<em>#ff701f</em></div><div class="bar" style="background:#ff701f;color:#000">interactive<em>#ff701f</em></div><div class="steps"><div class="step" style="background:#f7e1cb">1</div><div class="step" style="background:#facc9b">2</div><div class="step" style="background:#ffca93">3</div><div class="step" style="background:repeating-linear-gradient(45deg,#fff 0 6px,#e8eaed 6px 12px);color:#5f6368">—</div><div class="step s5" style="background:#471406">5</div></div><p class="legend">surface-1 → 5：#f7e1cb · #facc9b · #ffca93 · — · #471406</p></article>
+<article class="card"><h2>terracotta<span>陶土，复古暖</span></h2><div class="bar" style="background:#e26c42;color:#000">main<em>#e26c42</em></div><div class="bar" style="background:#a13f1c;color:#fff">interactive<em>#a13f1c</em></div><div class="steps"><div class="step" style="background:#ffede8">1</div><div class="step" style="background:#ffdbd0">2</div><div class="step" style="background:#ffb59d">3</div><div class="step" style="background:#ff8b64">4</div><div class="step s5" style="background:#390c00">5</div></div><p class="legend">surface-1 → 5：#ffede8 · #ffdbd0 · #ffb59d · #ff8b64 · #390c00</p></article>
+<article class="card"><h2>red<span>醒目，大面积铺会累</span></h2><div class="bar" style="background:#f94a36;color:#000">main<em>#f94a36</em></div><div class="bar" style="background:#b91e17;color:#fff">interactive<em>#b91e17</em></div><div class="steps"><div class="step" style="background:#ffedea">1</div><div class="step" style="background:#ffdad5">2</div><div class="step" style="background:#ffb4a9">3</div><div class="step" style="background:#ff8a7a">4</div><div class="step s5" style="background:#410001">5</div></div><p class="legend">surface-1 → 5：#ffedea · #ffdad5 · #ffb4a9 · #ff8a7a · #410001</p></article>
+<article class="card"><h2>salmon<span>柔和玫红</span></h2><div class="bar" style="background:#ed6798;color:#000">main<em>#ed6798</em></div><div class="bar" style="background:#d81261;color:#fff">interactive<em>#d81261</em></div><div class="steps"><div class="step" style="background:#fde4ed">1</div><div class="step" style="background:#f9bad1">2</div><div class="step" style="background:#f48eb3">3</div><div class="step" style="background:#ed6798">4</div><div class="step s5" style="background:#430829">5</div></div><p class="legend">surface-1 → 5：#fde4ed · #f9bad1 · #f48eb3 · #ed6798 · #430829</p></article>
+<article class="card"><h2>pink<span>糖果粉，数据集里占比最高</span></h2><div class="bar" style="background:#ff9bd2;color:#000">main<em>#ff9bd2</em></div><div class="bar" style="background:#b40082;color:#fff">interactive<em>#b40082</em></div><div class="steps"><div class="step" style="background:#f7edf2">1</div><div class="step" style="background:#ecc2d9">2</div><div class="step" style="background:#e495c0">3</div><div class="step" style="background:#d26dac">4</div><div class="step s5" style="background:#380232">5</div></div><p class="legend">surface-1 → 5：#f7edf2 · #ecc2d9 · #e495c0 · #d26dac · #380232</p></article>
+<article class="card"><h2>magenta<span>荧光品红，赛博感</span></h2><div class="bar" style="background:#ed77ff;color:#000">main<em>#ed77ff</em></div><div class="bar" style="background:#ca3be2;color:#000">interactive<em>#ca3be2</em></div><div class="steps"><div class="step" style="background:#ffebff">1</div><div class="step" style="background:#ffd2ff">2</div><div class="step" style="background:#f4adff">3</div><div class="step" style="background:#de87ed">4</div><div class="step s5" style="background:#2f0444">5</div></div><p class="legend">surface-1 → 5：#ffebff · #ffd2ff · #f4adff · #de87ed · #2f0444</p></article>
+<article class="card"><h2>purple<span>紫罗兰，创意/神秘</span></h2><div class="bar" style="background:#9961ff;color:#000">main<em>#9961ff</em></div><div class="bar" style="background:#762de3;color:#fff">interactive<em>#762de3</em></div><div class="steps"><div class="step" style="background:#f7edff">1</div><div class="step" style="background:#ebdcff">2</div><div class="step" style="background:#d4bbff">3</div><div class="step" style="background:#bd99ff">4</div><div class="step s5" style="background:#260058">5</div></div><p class="legend">surface-1 → 5：#f7edff · #ebdcff · #d4bbff · #bd99ff · #260058</p></article>
+<article class="card"><h2>brown<span>皮革，大地</span></h2><div class="bar" style="background:#b47943;color:#000">main<em>#b47943</em></div><div class="bar" style="background:#7c4c1f;color:#fff">interactive<em>#7c4c1f</em></div><div class="steps"><div class="step" style="background:#ebdec4">1</div><div class="step" style="background:#e9c7ab">2</div><div class="step" style="background:#cda889">3</div><div class="step" style="background:#ae8864">4</div><div class="step s5" style="background:#3d2210">5</div></div><p class="legend">surface-1 → 5：#ebdec4 · #e9c7ab · #cda889 · #ae8864 · #3d2210</p></article>
+<article class="card"><h2>tan<span>米卡其，最温和</span></h2><div class="bar" style="background:#d4baac;color:#000">main<em>#d4baac</em></div><div class="bar" style="background:#765543;color:#fff">interactive<em>#765543</em></div><div class="steps"><div class="step" style="background:#f3eee4">1</div><div class="step" style="background:#e8dfcf">2</div><div class="step" style="background:#e0d1b6">3</div><div class="step" style="background:#dfcaa9">4</div><div class="step s5" style="background:#3f2b21">5</div></div><p class="legend">surface-1 → 5：#f3eee4 · #e8dfcf · #e0d1b6 · #dfcaa9 · #3f2b21</p></article>
+<article class="card"><h2>gray<span>纯中性，拿不准时的兜底</span></h2><div class="bar" style="background:#c2c2c2;color:#000">main<em>#c2c2c2</em></div><div class="bar" style="background:#000000;color:#fff">interactive<em>#000000</em></div><div class="steps"><div class="step" style="background:repeating-linear-gradient(45deg,#fff 0 6px,#e8eaed 6px 12px);color:#5f6368">—</div><div class="step" style="background:#f5f5f5">2</div><div class="step" style="background:#e6e6e6">3</div><div class="step" style="background:#c2c2c2">4</div><div class="step s5" style="background:#262626">5</div></div><p class="legend">surface-1 → 5：— · #f5f5f5 · #e6e6e6 · #c2c2c2 · #262626</p></article>
+  </div>
+</main>
+<footer>切换方式：把区块根元素上的 <code>theme-&lt;color&gt;</code> 换掉即可，同时确认内部用的是 <code>.main</code> / <code>.interactive</code> / <code>.surface-N</code> 钩子类。完整选色法则见 references/palette.md。</footer>
+</body>
+</html>

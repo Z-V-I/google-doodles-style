@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Multicolor">
+  <path d="M12 12 L12 0 A12 12 0 0 1 24 12 Z" fill="#4285F4" transform="rotate(0 12 12)"/>
+  <path d="M12 12 L12 0 A12 12 0 0 1 24 12 Z" fill="#EA4335" transform="rotate(90 12 12)"/>
+  <path d="M12 12 L12 0 A12 12 0 0 1 24 12 Z" fill="#FBBC05" transform="rotate(180 12 12)"/>
+  <path d="M12 12 L12 0 A12 12 0 0 1 24 12 Z" fill="#34A853" transform="rotate(270 12 12)"/>
+</svg>

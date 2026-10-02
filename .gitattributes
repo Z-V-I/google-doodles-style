@@ -1,0 +1,26 @@
+# 换行符：统一按 LF 入库。
+# Windows 上 core.autocrlf=true 会把 .sh / .py 检出成 CRLF，
+# 拿到 WSL / Linux 跑就报 `/usr/bin/env bash^M: bad interpreter`。
+*.md    text eol=lf
+*.py    text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.sh    text eol=lf
+*.svg   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# 二进制：禁止任何行尾 / 编码转换
+*.woff2 binary
+*.woff  binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary

@@ -1,0 +1,302 @@
+<!-- ============================================================================
+     30-library.html — 检索页 / Library 主体（贴进 00-shell.html 的 .main-page 里）
+     ----------------------------------------------------------------------------
+     结构：
+       .search-doodle                    整个检索模块的根（带 data-doodle-url）
+         .search-doodle__box             顶部搜索框 + 标签区
+         .search-doodle__filter-panel    左侧/上方筛选折叠面板（glue-expansion-panel）
+         .search-doodle__results-wrapper 结果卡片网格
+         .search-doodle__results-loading 加载动画
+         .search-doodle__results-empty   空态
+         .search-doodle__results-button  Show More
+
+     数据接口契约（本镜像的 /live/api/v1/doodles 与原站语义一致）：
+       title_like=子串          按标题模糊匹配（大小写不敏感）
+       color_tags=red,blue      主色，逗号分隔
+       topic_tags=Music,Science 话题
+       form_tags=still,animated 形态
+       nationality_tags=Japan   地区
+       date_like_year=2024      年 / month / day 同理
+       page=1&limit=20          分页
+       （art_style_tags、sort_tags 本地无对应维度，传了不缩小结果集）
+     ============================================================================ -->
+
+<div class="main-page">
+
+  <div class="search-doodle" data-doodle-url="/doodle/">
+
+    <!-- ================================================ 搜索框 + 标签区 === -->
+    <div class="search-doodle__box">
+      <form class="search-doodle__box-form glue-page" method="get">
+
+        <div class="search-doodle__box-wrapper">
+          <svg class="search-doodle__box-icon" role="presentation" aria-hidden="true">
+            <use href="/static/icons.svg#search"></use>
+          </svg>
+
+          <input class="search-doodle__box-input" type="text"
+                 name="title_like" placeholder="Search Doodles">
+          <div class="search-doodle__box-input-border"></div>
+
+          <div class="search-doodle__box-button_wrapper">
+            <button class="search-doodle__box-button_search" type="submit" name="search">
+              <span class="search-doodle__box-button_search-input">Search</span>
+              <svg class="glue-icon" alt="" role="img" aria-hidden="true">
+                <use href="/static/icons.svg#right-arrow"></use>
+              </svg>
+            </button>
+
+            <button class="search-doodle__box-button_random" type="submit" name="random"
+                    data-g-event="module_search" data-g-module_name="search_cta"
+                    data-g-cta_type="button" data-g-cta_text="surprise me">
+              Surprise me
+              <svg class="glue-icon" alt="" role="img" aria-hidden="true">
+                <use href="/static/icons.svg#sparkles"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 已选条件 chips（JS 往里塞 .search-doodle__tag-item） -->
+        <div class="search-doodle__box__tag_wrapper">
+          <div class="search-doodle__box__tag"></div>
+          <button class="search-doodle__box__tag_clear cta cta--1" type="button">
+            Clear filters
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+
+    <!-- ============================================ 筛选面板（可折叠组） = -->
+    <div class="search-doodle__filter-panel__wrapper">
+      <form class="search-doodle__filter-form">
+        <div class="glue-expansion-panels search-doodle__filter-wrapper">
+
+          <!-- ---- 一组筛选项 = 一个 glue-expansion-panel ---- -->
+          <div class="search-doodle__filter-panel glue-expansion-panel">
+            <p class="glue-expansion-panel__toggle">
+              <span class="glue-expansion-panel__button"
+                    data-glue-expansion-panel-toggle-for="search-doodle__filter-1-content">
+                <span class="glue-expansion-panel__header-text">Date</span>
+                <span class="glue-expansion-panel__header-counter"></span>
+                <svg role="presentation" aria-hidden="true"
+                     class="glue-icon glue-expansion-panel__header-arrow">
+                  <use href="/static/glue-icons.svg#expand-more"></use>
+                </svg>
+              </span>
+            </p>
+
+            <div class="search-doodle__filter-panel__content glue-expansion-panel__content"
+                 id="search-doodle__filter-1-content">
+              <div class="glue-page">
+                <div class="search-doodle__filter-panel__content-date">
+
+                  <div class="search-doodle__filter-panel__content-date__dropdown dropdown--year">
+                    <div class="search-doodle__filter-panel__content-date__dropdown-label label--year">
+                      Year
+                    </div>
+                    <select name="date_like_year"
+                            class="search-doodle__filter-panel__content-date__dropdown-select select--year">
+                      <option value="" disabled selected>Select a year</option>
+                      <option value="2026">2026</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <!-- …倒序到 1998 -->
+                    </select>
+                  </div>
+
+                  <div class="search-doodle__filter-panel__content-date__dropdown dropdown--month">
+                    <div class="search-doodle__filter-panel__content-date__dropdown-label label--month">
+                      Month
+                    </div>
+                    <select name="date_like_month"
+                            class="search-doodle__filter-panel__content-date__dropdown-select select--month">
+                      <option value="" disabled selected>Select a month</option>
+                      <option value="1">January</option>
+                      <!-- … 12 个月 -->
+                    </select>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- 话题：勾选列表 ---- -->
+          <div class="search-doodle__filter-panel glue-expansion-panel">
+            <p class="glue-expansion-panel__toggle">
+              <span class="glue-expansion-panel__button"
+                    data-glue-expansion-panel-toggle-for="search-doodle__filter-2-content">
+                <span class="glue-expansion-panel__header-text">Topics</span>
+                <span class="glue-expansion-panel__header-counter"></span>
+                <svg role="presentation" aria-hidden="true"
+                     class="glue-icon glue-expansion-panel__header-arrow">
+                  <use href="/static/glue-icons.svg#expand-more"></use>
+                </svg>
+              </span>
+            </p>
+
+            <div class="search-doodle__filter-panel__content glue-expansion-panel__content"
+                 id="search-doodle__filter-2-content">
+              <div class="search-doodle__filter-panel__content-topics">
+              <!-- 标签式勾选项：label 本身带 search-doodle__tag-item + as-input + 组名类。
+                   图标区固定放两个 svg（checkmark / close），CSS 按选中态切换显示。 -->
+              <label class="search-doodle__tag-item as-input input-topic">
+                <input class="search-doodle__filter-panel__content-topics__input-checkbox"
+                       type="checkbox" name="topic_tags" value="music">
+                <span class="search-doodle__tag-item-label">Music</span>
+                <div class="search-doodle__tag-item-icon">
+                  <svg role="presentation" aria-hidden="true" class="glue-icon checkmark">
+                    <use href="/static/icons.svg#checkmark"></use>
+                  </svg>
+                  <svg role="presentation" aria-hidden="true" class="glue-icon close">
+                    <use href="/static/icons.svg#close"></use>
+                  </svg>
+                </div>
+              </label>
+
+              <label class="search-doodle__tag-item as-input input-topic">
+                <input class="search-doodle__filter-panel__content-topics__input-checkbox"
+                       type="checkbox" name="topic_tags" value="football soccer">
+                <span class="search-doodle__tag-item-label">Football/Soccer</span>
+                <div class="search-doodle__tag-item-icon">
+                  <svg role="presentation" aria-hidden="true" class="glue-icon checkmark">
+                    <use href="/static/icons.svg#checkmark"></use>
+                  </svg>
+                  <svg role="presentation" aria-hidden="true" class="glue-icon close">
+                    <use href="/static/icons.svg#close"></use>
+                  </svg>
+                </div>
+              </label>
+              <!-- … 约 170 个话题。value 用「非字母数字折叠成空格再小写」的规则，
+                   所以 Football/Soccer → football soccer。见 components.md 第 7.1 节。 -->
+            </div>
+            </div>
+          </div>
+
+          <!-- ---- 主色：圆形色块 ---- -->
+          <div class="search-doodle__filter-panel glue-expansion-panel">
+            <p class="glue-expansion-panel__toggle">
+              <span class="glue-expansion-panel__button"
+                    data-glue-expansion-panel-toggle-for="search-doodle__filter-3-content">
+                <span class="glue-expansion-panel__header-text">Colors</span>
+                <span class="glue-expansion-panel__header-counter"></span>
+                <svg role="presentation" aria-hidden="true"
+                     class="glue-icon glue-expansion-panel__header-arrow">
+                  <use href="/static/glue-icons.svg#expand-more"></use>
+                </svg>
+              </span>
+            </p>
+
+            <div class="search-doodle__filter-panel__content glue-expansion-panel__content"
+                 id="search-doodle__filter-3-content">
+              <div class="search-doodle__filter-panel__content-circle">
+                <!-- 色块颜色由 CSS 的 [value=red] 兄弟选择器给，不要写内联 style，
+                     否则和原站样式表冲突时会被内联优先级压住。
+                     注意：容器与色圈必须是 <div> —— 它们靠 width:80px + height:0 +
+                     padding-bottom:calc(100% - 2px) 撑正方形，<span> 是行内元素，
+                     宽高会被忽略，色圈会塌成一根细条。 -->
+                <label class="search-doodle__filter-panel__content-circle__input-label input-color">
+                  <input type="checkbox" name="color_tags" value="red"
+                         class="search-doodle__filter-panel__content-circle__input-checkbox">
+                  <div class="search-doodle__filter-panel__content-circle__input-circle-container">
+                    <div class="search-doodle__filter-panel__content-circle__input-circle circle-color"></div>
+                    <div class="search-doodle__filter-panel__content-circle__input-circle-icon">
+                      <svg role="presentation" aria-hidden="true" class="glue-icon">
+                        <use href="/static/icons.svg#checkmark"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="search-doodle__filter-panel__content-circle__input-circle-text">Red</span>
+                </label>
+
+                <label class="search-doodle__filter-panel__content-circle__input-label input-color">
+                  <input type="checkbox" name="color_tags" value="blue"
+                         class="search-doodle__filter-panel__content-circle__input-checkbox">
+                  <div class="search-doodle__filter-panel__content-circle__input-circle-container">
+                    <div class="search-doodle__filter-panel__content-circle__input-circle circle-color"></div>
+                    <div class="search-doodle__filter-panel__content-circle__input-circle-icon">
+                      <svg role="presentation" aria-hidden="true" class="glue-icon">
+                        <use href="/static/icons.svg#checkmark"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="search-doodle__filter-panel__content-circle__input-circle-text">Blue</span>
+                </label>
+                <!-- … 共 22 个色值：gray grey tan brown terracotta red orange yellow lime
+                     grass green emerald teal light-blue light_blue blue dark-blue purple
+                     magenta pink salmon black white multicolor
+                     （multicolor 用 <object class="circle-color-bg"> 贴 multicolor.svg 当底图） -->
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- 形态 / 地区 / 排序：结构同上 ---- -->
+
+        </div>
+      </form>
+    </div>
+
+
+    <!-- ==================================================== 结果卡片网格 === -->
+    <div class="glue-page">
+      <div class="search-doodle__results-wrapper">
+        <!-- JS 按 API 结果克隆下面的 <template> 填进来 -->
+      </div>
+
+      <div class="search-doodle__results-loading">
+        <div class="loader">
+          <img alt="" src="/static/loading.gif">
+        </div>
+      </div>
+
+      <div class="search-doodle__results-empty">
+        <object aria-label="No results found. Want to submit your idea?"
+                class="search-doodle__results-empty-icon"
+                type="image/svg+xml" data="/static/not-found.svg"></object>
+        <p class="search-doodle__results-empty-label">
+          No results found. Want to submit your idea?
+        </p>
+        <p class="search-doodle__results-empty-description">
+          The Doodle you’re looking for may not exist yet, but it could! Check out the
+          Doodle Guidelines in our FAQ and tell us what Doodle we should create next.
+        </p>
+        <a class="cta search-doodle__results-empty-cta" href="/about/#section-4"
+           aria-label="Let’s do it">
+          Let’s do it
+          <svg class="glue-icon" alt="" role="img" aria-hidden="true">
+            <use href="/static/icons.svg#right-arrow"></use>
+          </svg>
+        </a>
+      </div>
+
+      <button class="cta cta--1 search-doodle__results-button">
+        Show More
+        <svg class="glue-icon glue-icon--24px" alt="" role="img" aria-hidden="true">
+          <use href="/static/icons.svg#right-arrow"></use>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 卡片模板：JS 克隆它来渲染每一条结果 -->
+<template id="search-doodle__card-template">
+  <div class="doodle-card-wrapper">
+    <a href="" class="doodle-card-link">
+      <div class="doodle-card">
+        <div class="doodle-card-img">
+          <img loading="lazy" src="" alt="">
+        </div>
+        <div class="doodle-card-content">
+          <div class="doodle-card-content__date"></div>
+          <p class="doodle-card-content__event"></p>
+        </div>
+      </div>
+    </a>
+  </div>
+</template>
